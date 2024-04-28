@@ -1,14 +1,31 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <app-layout>
+    <router-view />
+  </app-layout>
+
 </template>
 
+
+<script>
+import AppLayout from "./components/global/AppLayout.vue";
+
+export default {
+  components: {
+    AppLayout,
+  },
+};
+
+</script>
+
 <style lang="scss">
+@font-face {
+  font-family: "Montserrat Arabic";
+  src: url(./assets/fonts/Montserrat-Arabic-Regular.ttf);
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  // font-family: 'Montserrat Arabic', sans-serif;
+  // font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
