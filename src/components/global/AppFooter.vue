@@ -3,51 +3,71 @@
         <v-footer :app="true" color="#036C46" absolute>
 
             <v-container fluid class="px-0 py-0 ">
-                <v-row style="background-color: #F8F8F8; right: 0;left: 0;position: absolute; margin-bottom: 10px">
-                    <v-col cols="12" sm="6" md="4" lg="4">
-                        <div class="parent  ">
-                            <p style="font-weight: 600; color: #939393;font-size: 22px;">نحن دائما جاهزون لمساعدتك</p>
-                        </div>
+                <v-row style="background-color: #F8F8F8; right: 0;left: 0;position: absolute; margin-bottom: 10px; ">
 
-
+                    <v-col cols="12" sm="12" md="12" lg="4">
+                        <v-row>
+                            <v-col cols="12">
+                                <div class="parent  ">
+                                    <p class="text" style="font-weight: 600; color: #939393;font-size: 22px;">نحن دائما
+                                        جاهزون
+                                        لمساعدتك
+                                    </p>
+                                </div>
+                            </v-col>
+                        </v-row>
                     </v-col>
-                    <v-col cols="12" sm="6" md="4" lg="4">
-                        <div class="parent d-flex align-center justify-center  second  "
-                            style="  padding-right: 130px;">
-                            <span style="font-weight: 600; color: #939393;font-size: 22px;">
-                                ahmed99@gmail.com </span>
-                            <svg width="35" height="36" viewBox="0 0 54 55" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" style="margin-right: 15px;">
-                                <path
-                                    d="M38.2559 8.0625H15.7559C9.00586 8.0625 4.50586 11.4375 4.50586 19.3125V35.0625C4.50586 42.9375 9.00586 46.3125 15.7559 46.3125H38.2559C45.0059 46.3125 49.5059 42.9375 49.5059 35.0625V19.3125C49.5059 11.4375 45.0059 8.0625 38.2559 8.0625ZM39.3134 21.765L32.2709 27.39C30.7859 28.5825 28.8959 29.1675 27.0059 29.1675C25.1159 29.1675 23.2034 28.5825 21.7409 27.39L14.6984 21.765C13.9784 21.18 13.8659 20.1 14.4284 19.38C15.0134 18.66 16.0709 18.525 16.7909 19.11L23.8334 24.735C25.5434 26.1075 28.4459 26.1075 30.1559 24.735L37.1984 19.11C37.9184 18.525 38.9984 18.6375 39.5609 19.38C40.1459 20.1 40.0334 21.18 39.3134 21.765Z"
-                                    fill="#939393" />
-                            </svg>
+
+                    <v-col cols="12" sm="12" md="12" lg="4">
+                        <v-row>
+                            <v-col cols="12">
+                                <div class="parent second d-flex align-center justify-center "
+                                    style="  padding-right: 130px;">
+                                    <span class="text" style="font-weight: 600; color: #939393;font-size: 22px;">
+                                        ahmed99@gmail.com </span>
+                                    <svg class="mail-svg" width="35" height="36" viewBox="0 0 54 55" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" style="margin-right: 15px;">
+                                        <path
+                                            d="M38.2559 8.0625H15.7559C9.00586 8.0625 4.50586 11.4375 4.50586 19.3125V35.0625C4.50586 42.9375 9.00586 46.3125 15.7559 46.3125H38.2559C45.0059 46.3125 49.5059 42.9375 49.5059 35.0625V19.3125C49.5059 11.4375 45.0059 8.0625 38.2559 8.0625ZM39.3134 21.765L32.2709 27.39C30.7859 28.5825 28.8959 29.1675 27.0059 29.1675C25.1159 29.1675 23.2034 28.5825 21.7409 27.39L14.6984 21.765C13.9784 21.18 13.8659 20.1 14.4284 19.38C15.0134 18.66 16.0709 18.525 16.7909 19.11L23.8334 24.735C25.5434 26.1075 28.4459 26.1075 30.1559 24.735L37.1984 19.11C37.9184 18.525 38.9984 18.6375 39.5609 19.38C40.1459 20.1 40.0334 21.18 39.3134 21.765Z"
+                                            fill="#939393" />
+                                    </svg>
 
 
-                        </div>
+                                </div>
+                            </v-col>
+                        </v-row>
                     </v-col>
-                    <v-col cols="12" sm="6" md="4" lg="4">
-                        <div class="parent d-flex align-center justify-center  " style="padding-right: 80px">
-                            <span style="font-weight: 600; color: #939393;font-size: 22px;"> 3423523895+ </span>
 
-                            <svg width="29" height="30" viewBox="0 0 45 46" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" style="margin-right: 15px;">
-                                <path
-                                    d="M44.9688 21.361C44.2038 8.31099 32.3463 -1.74649 18.6888 0.503513C9.28383 2.05601 1.74634 9.68347 0.283842 19.0885C-0.571158 24.5335 0.553891 29.686 3.00639 33.9385L1.00386 41.386C0.553859 43.0735 2.10631 44.6035 3.77131 44.131L11.1063 42.106C14.4363 44.0635 18.3288 45.1885 22.4913 45.1885C35.1813 45.1885 45.7113 34.006 44.9688 21.361ZM33.4939 31.0585C33.2914 31.4635 33.0438 31.846 32.7288 32.206C32.1663 32.8135 31.5588 33.2635 30.8838 33.5335C30.2088 33.826 29.4663 33.961 28.6788 33.961C27.5313 33.961 26.2938 33.691 25.0113 33.1285C23.7063 32.566 22.4239 31.8235 21.1414 30.901C19.8364 29.956 18.6214 28.8985 17.4514 27.751C16.2814 26.581 15.2463 25.3434 14.3013 24.0609C13.3788 22.7784 12.6363 21.496 12.0963 20.2135C11.5563 18.931 11.2864 17.6935 11.2864 16.5235C11.2864 15.7585 11.4214 15.016 11.6914 14.341C11.9614 13.6435 12.3889 13.0135 12.9964 12.451C13.7164 11.731 14.5038 11.3935 15.3363 11.3935C15.6513 11.3935 15.9663 11.461 16.2588 11.596C16.5513 11.731 16.8213 11.9335 17.0238 12.226L19.6338 15.916C19.8363 16.2085 19.9938 16.456 20.0838 16.7035C20.1963 16.951 20.2413 17.176 20.2413 17.401C20.2413 17.671 20.1514 17.941 19.9939 18.211C19.8364 18.481 19.6338 18.751 19.3638 19.021L18.5088 19.921C18.3738 20.056 18.3289 20.191 18.3289 20.371C18.3289 20.461 18.3513 20.551 18.3738 20.641C18.4188 20.731 18.4414 20.7985 18.4639 20.866C18.6664 21.2485 19.0263 21.721 19.5213 22.306C20.0388 22.891 20.5789 23.4985 21.1639 24.0835C21.7714 24.691 22.3564 25.2309 22.9639 25.7484C23.5489 26.2434 24.0438 26.581 24.4263 26.7835C24.4938 26.806 24.5614 26.8509 24.6289 26.8734C24.7189 26.9184 24.8089 26.9185 24.9214 26.9185C25.1239 26.9185 25.2589 26.851 25.3939 26.716L26.2488 25.861C26.5413 25.5685 26.8114 25.366 27.0589 25.231C27.3289 25.0735 27.5764 24.9835 27.8689 24.9835C28.0939 24.9835 28.3189 25.0285 28.5664 25.141C28.8139 25.2535 29.0838 25.3885 29.3538 25.591L33.0889 28.246C33.3814 28.4485 33.5838 28.696 33.7188 28.966C33.8313 29.2585 33.8988 29.5285 33.8988 29.8435C33.7638 30.226 33.6739 30.6535 33.4939 31.0585Z"
-                                    fill="#939393" />
-                            </svg>
 
-                        </div>
+                    <v-col cols="12" sm="12" md="12" lg="4">
+                        <v-row>
+                            <v-col cols="12">
+                                <div class="parent third d-flex align-center justify-center  "
+                                    style="padding-right: 80px">
+                                    <span class="text" style="font-weight: 600; color: #939393;font-size: 22px;">
+                                        3423523895+ </span>
+
+                                    <svg class="whatsup-svg" width="29" height="30" viewBox="0 0 45 46" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" style="margin-right: 15px;">
+                                        <path
+                                            d="M44.9688 21.361C44.2038 8.31099 32.3463 -1.74649 18.6888 0.503513C9.28383 2.05601 1.74634 9.68347 0.283842 19.0885C-0.571158 24.5335 0.553891 29.686 3.00639 33.9385L1.00386 41.386C0.553859 43.0735 2.10631 44.6035 3.77131 44.131L11.1063 42.106C14.4363 44.0635 18.3288 45.1885 22.4913 45.1885C35.1813 45.1885 45.7113 34.006 44.9688 21.361ZM33.4939 31.0585C33.2914 31.4635 33.0438 31.846 32.7288 32.206C32.1663 32.8135 31.5588 33.2635 30.8838 33.5335C30.2088 33.826 29.4663 33.961 28.6788 33.961C27.5313 33.961 26.2938 33.691 25.0113 33.1285C23.7063 32.566 22.4239 31.8235 21.1414 30.901C19.8364 29.956 18.6214 28.8985 17.4514 27.751C16.2814 26.581 15.2463 25.3434 14.3013 24.0609C13.3788 22.7784 12.6363 21.496 12.0963 20.2135C11.5563 18.931 11.2864 17.6935 11.2864 16.5235C11.2864 15.7585 11.4214 15.016 11.6914 14.341C11.9614 13.6435 12.3889 13.0135 12.9964 12.451C13.7164 11.731 14.5038 11.3935 15.3363 11.3935C15.6513 11.3935 15.9663 11.461 16.2588 11.596C16.5513 11.731 16.8213 11.9335 17.0238 12.226L19.6338 15.916C19.8363 16.2085 19.9938 16.456 20.0838 16.7035C20.1963 16.951 20.2413 17.176 20.2413 17.401C20.2413 17.671 20.1514 17.941 19.9939 18.211C19.8364 18.481 19.6338 18.751 19.3638 19.021L18.5088 19.921C18.3738 20.056 18.3289 20.191 18.3289 20.371C18.3289 20.461 18.3513 20.551 18.3738 20.641C18.4188 20.731 18.4414 20.7985 18.4639 20.866C18.6664 21.2485 19.0263 21.721 19.5213 22.306C20.0388 22.891 20.5789 23.4985 21.1639 24.0835C21.7714 24.691 22.3564 25.2309 22.9639 25.7484C23.5489 26.2434 24.0438 26.581 24.4263 26.7835C24.4938 26.806 24.5614 26.8509 24.6289 26.8734C24.7189 26.9184 24.8089 26.9185 24.9214 26.9185C25.1239 26.9185 25.2589 26.851 25.3939 26.716L26.2488 25.861C26.5413 25.5685 26.8114 25.366 27.0589 25.231C27.3289 25.0735 27.5764 24.9835 27.8689 24.9835C28.0939 24.9835 28.3189 25.0285 28.5664 25.141C28.8139 25.2535 29.0838 25.3885 29.3538 25.591L33.0889 28.246C33.3814 28.4485 33.5838 28.696 33.7188 28.966C33.8313 29.2585 33.8988 29.5285 33.8988 29.8435C33.7638 30.226 33.6739 30.6535 33.4939 31.0585Z"
+                                            fill="#939393" />
+                                    </svg>
+
+                                </div>
+                            </v-col>
+                        </v-row>
                     </v-col>
+
 
 
                 </v-row>
                 <!-- =========================================================== -->
                 <!-- =====================Second Part======================== -->
                 <!-- =========================================================== -->
-                <v-row class="d-flex justify-space-between align-center" style="margin-top: 55px;">
-                    <v-col cols=" 3">
-                        <v-card elevation="0" color="transparent" class="text-start">
+                <v-row style="margin-top: 55px;" justify="center">
+                    <v-col cols="12" sm="6" md="4" lg="3">
+                        <v-card elevation="0" color="transparent" class="first-card text-start ">
                             <img src="../../assets/images/logo 1.png" alt="">
                             <v-card-text
                                 style="font-weight: 700; font-size: 24px; text-align: right; line-height: 29.20px;">
@@ -105,61 +125,86 @@
                                 البريدية
                             </v-card-text>
                             <input type="search" name="footerSearch" id="footerSearch"
-                                style="width: 80%; height: 40px; border-radius: 7px; outline: none"
+                                style="width: 250px; height: 40px; border-radius: 7px; outline: none"
                                 placeholder="اكتب البريد الالكتروني  " class="bg-white py-3 px-5 mr-3 " />
 
                         </v-card>
                     </v-col>
-                    <v-col cols="3 ">
-                        <v-card elevation="0" color="transparent" class="text-start pl-0">
-                            <v-card-title style="font-weight: 600; font-size: 20px;line-height: 30px; color: #FFFFFF ">
-                                تسوق معنا</v-card-title>
-                            <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;"> حسابك </v-card-text>
-                            <v-card-text style=" font-weight: 600; font-size: 20px;color: #C5C5C5;"> تتبع طلبك
-                            </v-card-text>
-                            <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;"> طريقة الدفع
-                            </v-card-text>
-                            <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;"> الشحن والتوصيل
-                            </v-card-text>
-                        </v-card>
+                    <!-- ============================== -->
+
+                    <v-col cols="12" sm="12" md="8" lg="6">
+                        <v-row class=" shopus-card-row mr-10 ml-10" justify="center">
+
+                            <v-col cols="6">
+                                <v-card elevation="0" color="transparent" class="shopus-card text-start pl-0">
+                                    <v-card-title
+                                        style="font-weight: 600; font-size: 20px;line-height: 30px; color: #FFFFFF ">
+                                        تسوق معنا</v-card-title>
+                                    <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;"> حسابك
+                                    </v-card-text>
+                                    <v-card-text style=" font-weight: 600; font-size: 20px;color: #C5C5C5;"> تتبع طلبك
+                                    </v-card-text>
+                                    <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;"> طريقة الدفع
+                                    </v-card-text>
+                                    <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;"> الشحن
+                                        والتوصيل
+                                    </v-card-text>
+                                </v-card>
+                            </v-col>
+
+                            <v-col cols="6">
+                                <v-card class="text-start know-more " elevation="0" color="transparent"
+                                    style="width: 233px;">
+                                    <v-card-title
+                                        style="font-weight: 600; font-size: 20px;line-height: 60px; color: #FFFFFF ">
+                                        اعرف المزيد عننا</v-card-title>
+                                    <v-card-text
+                                        style=" font-weight: 600;font-size: 20px;color: #C5C5C5;line-height: 30px;">
+                                        مدونتنا
+                                    </v-card-text>
+                                    <v-card-text
+                                        style=" font-weight: 600;font-size: 20px;color: #C5C5C5;line-height: 30px;">
+                                        سياسة الخصوصية
+                                    </v-card-text>
+                                    <v-card-text
+                                        style=" font-weight: 600;font-size: 20px;color: #C5C5C5;line-height: 30px;">
+                                        سياسة الاستبدال
+                                        والاسترجاع </v-card-text>
+
+
+
+                                </v-card>
+                            </v-col>
+
+                        </v-row>
                     </v-col>
-                    <v-col cols="3 ">
-                        <v-card class="text-start " elevation="0" color="transparent" style="width: 233px;">
-                            <v-card-title style="font-weight: 600; font-size: 20px;line-height: 60px; color: #FFFFFF ">
-                                اعرف المزيد عننا</v-card-title>
-                            <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;line-height: 30px;">
-                                مدونتنا
-                            </v-card-text>
-                            <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;line-height: 30px;">
-                                سياسة الخصوصية
-                            </v-card-text>
-                            <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;line-height: 30px;">
-                                سياسة الاستبدال
-                                والاسترجاع </v-card-text>
 
 
+                    <!-- ============================== -->
 
-                        </v-card>
-                    </v-col>
-                    <v-col cols="3">
-                        <v-card class="text-right" elevation="0" color="transparent"
+
+                    <v-col cols="12" sm="6" md="4" lg="3">
+                        <v-card class="text-right " elevation="0" color="transparent"
                             style="gap: 42px; padding: 10px; line-height: 80px">
                             <v-card-title style="font-weight: 600; font-size: 21px;line-height: 80px ; color: #FFFFFF;">
                                 حمل التطبيق
                                 من هنا</v-card-title>
-                            <a href="https://play.google.com/store/games?hl=en&gl=US">
-                                <img src="../../assets/images/google.png" alt="" style="width: 60%;margin-right: 15px;">
-                            </a>
-                            <a href="https://www.apple.com/eg/app-store/">
-                                <img src="../../assets/images/play store.png" alt=""
-                                    style="width: 60%;margin-right: 15px;">
-                            </a>
-
-
-
-
+                            <div id="app-download-images">
+                                <a href="https://play.google.com/store/games?hl=en&gl=US">
+                                    <img src="../../assets/images/google.png" alt=""
+                                        style="width: 170px;margin-right: 15px;">
+                                </a>
+                                <a href="https://www.apple.com/eg/app-store/">
+                                    <img src="../../assets/images/play store.png" alt=""
+                                        style="width: 170px;margin-right: 15px;">
+                                </a>
+                            </div>
                         </v-card>
                     </v-col>
+
+
+
+
                 </v-row>
 
                 <!-- =========================================================== -->
@@ -169,13 +214,13 @@
 
                 <v-row class="pt-2 bg-white" style="right: 0;left: 0;position: absolute; margin-bottom: 10px">
 
-                    <v-col cols="6">
-                        <div class="master-cards d-flex text-end " style="gap: 5px;">
+                    <v-col class="master-cards-col" cols="12" md="6">
+                        <div class="master-cards d-flex justify-center justify-md-start " style="gap: 5px;">
                             <span style="margin-right: 20px;" v-for="(svg, i) in svgs" :key="i" v-html="svg"></span>
                         </div>
                     </v-col>
-                    <v-col cols="6">
-                        <div class=" d-flex justify-end">
+                    <v-col cols="12" md="6" class="text-center">
+                        <div class="copy-right d-flex justify-center justify-md-end">
                             <img src="../../assets/images/Screenshot_201-removebg-preview 1.png" alt="">
 
                             <p style="color: #036C46; font-size: 20px; font-weight: 600;"> Copyright &copy; 2010-2021
@@ -270,22 +315,145 @@ export default {
     })
 };
 </script>
-<style lang="scss">
-.app-footer {
+<style scoped>
+.second {
+    position: relative;
+}
+
+.second::before {
+    content: "";
+    position: absolute;
+    background-color: #939393;
+    left: -93px;
+    width: 2px;
+    height: 70%;
+    border-radius: 30%;
+
+}
+
+@media (max-width: 834px) {
+    .first-card {
+        margin-top: 100px;
+    }
+
+    .shopus-card {
+        margin-top: 50px;
+    }
+
+}
+
+
+@media only screen and (max-width: 834px) {
+
+    /* images */
+    #app-download-images {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        /* Adjust the gap as needed */
+    }
+
+    #app-download-images img {
+        width: 100%;
+        max-width: 170px;
+        /* Adjust the maximum width of the images */
+        margin-right: 0;
+    }
+
+    .parent {
+        display: block;
+        justify-content: center;
+    }
+
+    .parent .second {
+        padding-right: 0;
+    }
+}
+
+@media (max-width:375px) {
+    .text {
+        font-size: 15px !important;
+    }
+
+    .mail-svg {
+        width: 25px;
+        height: 26;
+
+    }
+
+    .whatsup-svg {
+        width: 19px;
+        height: 20px;
+    }
 
     .second {
-        position: relative;
-
-        &::before {
-            content: "";
-            position: absolute;
-            background-color: #939393;
-            left: -93px;
-            width: 2px;
-            height: 70%;
-            border-radius: 30%;
-
-        }
+        padding-right: 0 !important;
     }
+
+    .third {
+        padding-right: 0 !important;
+    }
+
+    /* ==================== */
+    .first-card {
+        margin-right: 40px !important;
+
+    }
+
+    .v-card-text {
+        font-size: 15px !important;
+    }
+
+    .v-card-title {
+        font-size: 15px !important;
+    }
+
+    .shopus-card {
+
+        width: 100%;
+        margin-top: 0 !important;
+    }
+
+    .know-more {
+
+        width: 100%;
+
+    }
+
+    .shopus-card-row {
+        margin: 0 !important;
+
+    }
+
+    .master-cards svg {
+        width: 70px;
+        height: 30px
+    }
+
+    .master-cards span {
+        margin-right: 0 !important;
+        width: 100px;
+
+    }
+
+    .copy-right img {
+        width: 20% !important;
+        margin-top: -8px !important;
+    }
+
+    .copy-right p {
+        font-size: 13px !important;
+    }
+
+
+
+    #app-download-images img {
+        width: 100%;
+        max-width: 150px;
+        /* Adjust the maximum width of the images */
+        margin-right: 0;
+    }
+
+
 }
 </style>

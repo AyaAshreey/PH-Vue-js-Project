@@ -1,32 +1,34 @@
 <template>
   <div class="app-nav">
-    <v-app-bar class="pt-3" height="fit-content" color="#036C46" absolute>
+    <v-app-bar class="pt-3" height="fit-content" color="#036C46">
       <!-- <v-app-bar-nav-icon @click="openCart"></v-app-bar-nav-icon> -->
       <v-container>
-        <v-row>
+        <v-row class="first-nav">
 
-          <v-col cols="3" class="ps-8" style="margin-right: -37px;">
+          <v-col cols="3" class="ps-8 " style="margin-right: -37px;">
             <div class="parent text-white d-flex justify-space-between align-center">
               <!-- ////////////Logo   //////////////////-->
-              <img src="@/assets/images/logo 1.png" alt="" />
+              <img class="nav-logo" src="@/assets/images/logo 1.png" alt="" />
 
               <!-- ///////////////// الشحن الي ////////// -->
-              <div class="lang d-flex align-center text-white " style="gap: 5px; cursor: pointer" id="language-btn">
-                <!-- <span v-html="selectedState[0].icon"></span> -->
-                <h4> الشحن الي {{ selectedState[0].lang }} </h4>
+              <div class="lang-column">
+                <div class="lang d-flex align-center text-white " style="gap: 5px; cursor: pointer" id="language-btn">
+                  <!-- <span v-html="selectedState[0].icon"></span> -->
+                  <h4> الشحن الي {{ selectedState[0].lang }} </h4>
 
-                <v-icon>mdi-chevron-down</v-icon>
-                <v-menu activator="#language-btn">
-                  <v-list v-model:selected="selectedState" mandatory>
-                    <v-list-item v-for=" lang  in  langs " :key="lang.lang" :value="lang">
-                      <v-list-item-title class="d-flex align-center" style="gap: 10px">
-                        <span v-html="lang.icon"></span> {{ lang.lang }}
-                        {{ lang.currency }}
-                      </v-list-item-title>
-                    </v-list-item>
-                  </v-list>
-                </v-menu>
+                  <v-icon>mdi-chevron-down</v-icon>
+                  <v-menu activator="#language-btn">
+                    <v-list v-model:selected="selectedState" mandatory>
+                      <v-list-item v-for=" lang  in  langs " :key="lang.lang" :value="lang">
+                        <v-list-item-title class="d-flex align-center" style="gap: 10px">
+                          <span v-html="lang.icon"> </span> {{ lang.lang }}
+                        </v-list-item-title>
+                      </v-list-item>
+                    </v-list>
+                  </v-menu>
+                </div>
               </div>
+
 
             </div>
           </v-col>
@@ -50,7 +52,7 @@
                   fill: #FFFFFF;
                   background-color: #FFBD1F;
                   height: 100%;
-                  width: 100px;
+                  width: 20%;
                   border-top-left-radius: 10px;
                   border-bottom-left-radius: 10px;
                   padding: 10px;
@@ -64,32 +66,71 @@
             </div>
           </v-col>
           <!-- ========================================================== -->
-          <v-col cols="3" class="first-col d-flex flex-row align-center "
-            style="gap: 15px ;padding-right: 35px; padding-bottom: 35px;">
-            <div>
-              <a href="#"> تسجيل الدخول </a>
-            </div>
+          <div class="overlay">
+            <v-col cols="3" class="first-col d-flex flex-row align-center "
+              style="gap: 15px ;padding-right: 35px; padding-bottom: 35px;">
+              <div>
+                <a href="#"> تسجيل الدخول </a>
+              </div>
 
-            <div style="cursor: pointer">
-              <svg style="width: 28px; ; fill: #FFFFFF" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path class="path1"
-                  d="M409.6 1024c-56.464 0-102.4-45.936-102.4-102.4s45.936-102.4 102.4-102.4S512 865.136 512 921.6 466.064 1024 409.6 1024zm0-153.6c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z">
-                </path>
-                <path class="path2"
-                  d="M768 1024c-56.464 0-102.4-45.936-102.4-102.4S711.536 819.2 768 819.2s102.4 45.936 102.4 102.4S824.464 1024 768 1024zm0-153.6c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z">
-                </path>
-                <path class="path3"
-                  d="M898.021 228.688C885.162 213.507 865.763 204.8 844.8 204.8H217.954l-5.085-30.506C206.149 133.979 168.871 102.4 128 102.4H76.8c-14.138 0-25.6 11.462-25.6 25.6s11.462 25.6 25.6 25.6H128c15.722 0 31.781 13.603 34.366 29.112l85.566 513.395C254.65 736.421 291.929 768 332.799 768h512c14.139 0 25.6-11.461 25.6-25.6s-11.461-25.6-25.6-25.6h-512c-15.722 0-31.781-13.603-34.366-29.11l-12.63-75.784 510.206-44.366c39.69-3.451 75.907-36.938 82.458-76.234l34.366-206.194c3.448-20.677-1.952-41.243-14.813-56.424zm-35.69 48.006l-34.366 206.194c-2.699 16.186-20.043 32.221-36.39 33.645l-514.214 44.714-50.874-305.246h618.314c5.968 0 10.995 2.054 14.155 5.782 3.157 3.73 4.357 9.024 3.376 14.912z">
-                </path>
-              </svg>
+              <div style="cursor: pointer">
+                <svg style="width: 28px; ; fill: #FFFFFF" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                  <path class="path1"
+                    d="M409.6 1024c-56.464 0-102.4-45.936-102.4-102.4s45.936-102.4 102.4-102.4S512 865.136 512 921.6 466.064 1024 409.6 1024zm0-153.6c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z">
+                  </path>
+                  <path class="path2"
+                    d="M768 1024c-56.464 0-102.4-45.936-102.4-102.4S711.536 819.2 768 819.2s102.4 45.936 102.4 102.4S824.464 1024 768 1024zm0-153.6c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z">
+                  </path>
+                  <path class="path3"
+                    d="M898.021 228.688C885.162 213.507 865.763 204.8 844.8 204.8H217.954l-5.085-30.506C206.149 133.979 168.871 102.4 128 102.4H76.8c-14.138 0-25.6 11.462-25.6 25.6s11.462 25.6 25.6 25.6H128c15.722 0 31.781 13.603 34.366 29.112l85.566 513.395C254.65 736.421 291.929 768 332.799 768h512c14.139 0 25.6-11.461 25.6-25.6s-11.461-25.6-25.6-25.6h-512c-15.722 0-31.781-13.603-34.366-29.11l-12.63-75.784 510.206-44.366c39.69-3.451 75.907-36.938 82.458-76.234l34.366-206.194c3.448-20.677-1.952-41.243-14.813-56.424zm-35.69 48.006l-34.366 206.194c-2.699 16.186-20.043 32.221-36.39 33.645l-514.214 44.714-50.874-305.246h618.314c5.968 0 10.995 2.054 14.155 5.782 3.157 3.73 4.357 9.024 3.376 14.912z">
+                  </path>
+                </svg>
 
 
-            </div>
-            <div>
-              <a class="Lang-btn" href="#">EN</a>
-            </div>
+              </div>
+              <div>
+                <a class="Lang-btn" href="#">EN</a>
+              </div>
 
-          </v-col>
+            </v-col>
+
+          </div>
+
+
+
+
+
+
+          <div class="burger-menu flex-row align-center">
+            <v-col cols="3" class="first-col d-flex flex-row align-center " style="gap: 15px ; padding-bottom: 35px;">
+
+              <div class="lang d-flex align-center text-white " style="gap: 5px; cursor: pointer" id="language-btn">
+                <!-- <span v-html="selectedState[0].icon"></span> -->
+
+                <v-icon>mdi-menu</v-icon>
+                <v-menu activator="#language-btn">
+                  <v-list v-model:selected="selectedState" mandatory>
+                    <v-list-item v-for=" lang  in  langs " :key="lang.lang" :value="lang">
+                      <v-list-item-title class="d-flex align-center" style="gap: 10px">
+                        <span v-html="lang.icon"> </span> {{ lang.lang }}
+                      </v-list-item-title>
+                    </v-list-item>
+                  </v-list>
+                </v-menu>
+              </div>
+
+
+
+
+
+
+
+
+            </v-col>
+          </div>
+
+
+
         </v-row>
         <!-- ===================================================================== -->
         <!-- ================Second Row Nav -->
@@ -128,12 +169,12 @@
               <li><a href=""> الكل </a> </li>
               <li><a href=""> العناية بالشعر </a> </li>
               <li><a href=""> العناية بالبشرة </a> </li>
-              <li><a href=""> العناية بالرجل </a> </li>
-              <li><a href=""> العناية بالمرأة </a> </li>
-              <li><a href=""> العناية بالطفل </a> </li>
-              <li><a href=""> الصيدلية الحيوانية </a> </li>
+              <li class="extra-link"><a href=""> العناية بالرجل </a> </li>
+              <li class="extra-link"><a href=""> العناية بالمرأة </a> </li>
+              <li class="extra-link"><a href=""> العناية بالطفل </a> </li>
+              <li class="extra-link"><a href=""> الصيدلية الحيوانية </a> </li>
               <li><a href=""> الماركات </a> </li>
-              <li><a href=""> العروض </a> </li>
+              <li class="extra-link"><a href=""> العروض </a> </li>
 
             </ul>
           </v-col>
@@ -185,7 +226,7 @@ export default {
 </svg>
 `,
         lang: "السعودية",
-        // currency: "USD",
+
       },
     ],
     langs: [
@@ -216,7 +257,7 @@ export default {
   </g>
 </svg>`,
         lang: "السعودية",
-        // currency: "USD",
+
       },
       {
         icon: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icons-eg" viewBox="0 0 512 512" style="enable-background: new 0 0 512 512; width: 20px">
@@ -259,7 +300,7 @@ export default {
 </svg>
 `,
         lang: "مصر",
-        // currency: "EURO",
+
       },
       {
         icon: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 256 256" style="enable-background: new 0 0 512 512; width: 20px" xml:space="preserve">
@@ -274,39 +315,113 @@ export default {
         </g>
         </svg>`,
         lang: "الامارات",
-        // currency: "EURO",
+
       },
     ],
   }),
 };
 </script>
-<style lang="scss">
+<style>
 #search {
   display: flex;
   flex-direction: row-reverse;
 }
 
-.first-col {
-  a {
-    text-decoration: none;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 800;
+.first-col a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 800;
+
+}
+
+.first-col .Lang-btn {
+  color: #FFFFFF;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+
+.links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+
+}
+
+.overlay {
+  display: flex;
+}
+
+.burger-menu {
+  display: none
+}
+
+@media screen and (max-width: 834px) {
+
+  .links {
+    width: 700px;
   }
 
-  .Lang-btn {
-    color: #FFFFFF;
-    font-size: 25px;
-    font-weight: 800;
+  .links a {
+    font-size: 12px;
+    margin-right: 2px;
+  }
+
+  .lang-column {
+    display: none;
+  }
+
+  .v-col-8 {
+    width: 900px;
   }
 }
 
-.links {
-  a {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
+@media screen and (max-width: 375px) {
+  .overlay {
+    display: none;
   }
+
+  .burger-menu {
+    display: block ruby;
+    margin-right: 350px;
+    margin-top: -29px;
+  }
+
+  .first-col {
+    display: none !important;
+  }
+
+  .lang {
+    display: none;
+  }
+
+  .first-nav {
+    width: 370px !important;
+  }
+
+  .nav-logo {
+    margin-right: 0;
+    border: 1px solid black;
+    width: 105px;
+  }
+
+  #search {
+    width: 200px !important;
+    height: 20px !important;
+  }
+
+  /* =========== */
+  .links {
+    border: 2px solid red;
+    justify-content: unset !important;
+  }
+
+  .extra-link {
+    display: none;
+
+  }
+
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="container mb-8 text-start">
+    <div class="container mb-3 text-start" style="width: 90%">
         <div class="allTabs">
             <button class="mybtn" :class="{ 'active-btn': activeIndex === 0 }" @click="toggleTab(0)">معلومات</button>
             <button class="mybtn" :class="{ 'active-btn': activeIndex === 1 }" @click="toggleTab(1)">تفاصيل</button>
@@ -16,10 +16,17 @@
                 </ul>
                 <h4 v-if="activeIndex === 0" style="color: #939393;font-weight: 700;margin-top: 10px;">{{ fact.secTitle
                     }}</h4>
-                <p v-if="activeIndex === 0" style="color: #939393; 
-                font-size: 14px;
-                ">{{ fact.secItem }}
-                </p>
+
+
+                <!-- <p class="wide-parg" v-if="activeIndex === 0" style="color: #939393; font-size: 14px;">{{ fact.secItem }}</p> -->
+
+
+                <p class="wide-parg" v-if="activeIndex === 0"
+                    :style="{ color: '#939393', fontSize: '14px', width: screenWidth <= 834 ? '70%' : 'auto' }">{{
+                fact.secItem }}</p>
+
+
+
                 <!-- ========section 2======= -->
                 <v-container>
                     <v-row>
@@ -43,15 +50,13 @@
                     </v-row>
                 </v-container>
 
-
-
-
                 <!-- ========section 3======= -->
                 <div class="rate-section mb-8">
                     <v-container>
                         <v-row>
-                            <v-col cols="1" class="ml-16">
-                                <ul v-if="activeIndex === 2" style=" line-height: 2; font-weight: 700;font-size: 25px;">
+                            <v-col cols="1">
+                                <ul v-if="activeIndex === 2"
+                                    style=" line-height: 1.8;color: #000000; font-weight: 700;font-size: 24px;">
                                     <li>5</li>
                                     <li>4</li>
                                     <li>3</li>
@@ -60,20 +65,23 @@
                                 </ul>
                             </v-col>
 
-                            <v-col cols="3" class="ml-6">
-                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="compact"
+                            <v-col cols="3" style="line-height: 2.1;">
+
+                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="dense"
                                     size="x-large" :show-rating="trye" :value="3"></v-rating>
-                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="compact"
-                                    size="x-large"></v-rating>
-                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="compact"
-                                    size="x-large"></v-rating>
-                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="compact"
-                                    size="x-large"></v-rating>
-                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="compact"
-                                    size="x-large"></v-rating>
+
+                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="dense"
+                                    size="x-large" :show-rating="true" :value="3"></v-rating>
+                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="dense"
+                                    size="x-large" :show-rating="true" :value="3"></v-rating>
+                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="dense"
+                                    size="x-large" :show-rating="true" :value="3"></v-rating>
+                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="dense"
+                                    size="x-large" :show-rating="true" :value="3"></v-rating>
                             </v-col>
                             <v-col cols="1">
-                                <ul v-if="activeIndex === 2" style=" line-height: 2; font-weight: 700;font-size: 25px;">
+                                <ul v-if="activeIndex === 2"
+                                    style=" line-height: 1.8; font-weight: 700;font-size: 24px;color: #000000;">
                                     <li>20</li>
                                     <li>10</li>
                                     <li>4</li>
@@ -82,11 +90,13 @@
                                 </ul>
                             </v-col>
                             <v-col cols="4">
-                                <p v-if="activeIndex === 2" style=" font-weight: 700;font-size: 25px;"> التقييم العام
+                                <p v-if="activeIndex === 2" style=" font-weight: 700;font-size: 24px;color: #000000;">
+                                    التقييم العام
                                 </p>
-                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="compact"
+                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="dense"
                                     size="x-large"></v-rating>
-                                <p v-if="activeIndex === 2" style=" font-weight: 700;font-size: 25px;"> 4.5 </p>
+                                <p v-if="activeIndex === 2" style=" font-weight: 700;font-size: 24px;color: #000000;">
+                                    4.5 </p>
                             </v-col>
                             <v-col cols="3"></v-col>
                         </v-row>
@@ -108,17 +118,18 @@
                 </div>
 
 
-
-
-
-
             </article>
+
         </div>
+
     </div>
 </template>
 
+
 <script setup>
-import { ref } from 'vue';
+
+
+import { ref, onUnmounted } from 'vue';
 
 const activeIndex = ref(0);
 
@@ -153,6 +164,23 @@ const facts = [
 function toggleTab(index) {
     activeIndex.value = index;
 }
+const screenWidth = ref(window.innerWidth);
+
+const updateScreenWidth = () => {
+    screenWidth.value = window.innerWidth;
+};
+
+window.addEventListener('resize', updateScreenWidth);
+
+onUnmounted(() => {
+    window.removeEventListener('resize', updateScreenWidth);
+});
+
+
+
+
+
+
 </script>
 
 <style scoped>
@@ -208,19 +236,6 @@ function toggleTab(index) {
     padding-left: 50px;
 }
 
-/* في الشاشات الاقل من 500 بكسل اعمل الكود ده  */
-@media (max-width: 500px) {
-    .parent-all-article {
-        height: 400px;
-    }
-}
-
-@media (max-width: 360px) {
-    .parent-all-article {
-        height: 450px;
-    }
-}
-
 .fun-facts {
     opacity: 0;
     position: absolute;
@@ -255,5 +270,22 @@ function toggleTab(index) {
 /* ========auto number list===== */
 ul li {
     list-style: none;
+}
+
+
+.wide-parg {
+    word-wrap: break-word;
+}
+
+@media (max-width: 834px) {
+    .wide-parg {
+        width: 70%;
+    }
+}
+
+@media (max-width: 375px) {
+    .wide-parg {
+        width: 70%;
+    }
 }
 </style>

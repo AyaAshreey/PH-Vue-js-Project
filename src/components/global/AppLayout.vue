@@ -6,7 +6,7 @@
                 <slot></slot>
             </v-main>
             <AppNav />
-            <ResponsiveNav v-show="windowWidth <= 990" />
+            <!-- <ResponsiveNav v-show="windowWidth <= 990" /> -->
             <FixedNavVue />
             <AppFooter />
         </v-layout>
@@ -18,7 +18,7 @@ import AppNav from "./AppNav.vue";
 import AppFooter from "./AppFooter.vue";
 import CartDrawer from "./CartDrawer.vue";
 import FixedNavVue from './FixedNav.vue';
-import ResponsiveNav from "./ResponsiveNav.vue";
+// import ResponsiveNav from "./ResponsiveNav.vue";
 
 
 
@@ -32,7 +32,7 @@ export default {
         FixedNavVue,
         AppFooter,
         CartDrawer,
-        ResponsiveNav,
+        // ResponsiveNav,
     },
     mounted() {
         this.windowWidth = window.innerWidth;
