@@ -19,11 +19,13 @@
 
 
                 <!-- <p class="wide-parg" v-if="activeIndex === 0" style="color: #939393; font-size: 14px;">{{ fact.secItem }}</p> -->
-
-
-                <p class="wide-parg" v-if="activeIndex === 0"
-                    :style="{ color: '#939393', fontSize: '14px', width: screenWidth <= 834 ? '70%' : 'auto' }">{{
+                <div class="contain-wide-paragraph">
+                    <p class="wide-parg" v-if="activeIndex === 0"
+                        :style="{ color: '#939393', fontSize: '14px', width: screenWidth <= 834 ? '70%' : 'auto' }">{{
                 fact.secItem }}</p>
+                </div>
+
+
 
 
 
@@ -65,7 +67,7 @@
                                 </ul>
                             </v-col>
 
-                            <v-col cols="3" style="line-height: 2.1;">
+                            <v-col class="star-rating" cols="3" style="line-height: 2.1;">
 
                                 <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="dense"
                                     size="x-large" :show-rating="trye" :value="3"></v-rating>
@@ -95,6 +97,73 @@
                                 </p>
                                 <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="dense"
                                     size="x-large"></v-rating>
+                                <p v-if="activeIndex === 2" style=" font-weight: 700;font-size: 24px;color: #000000;">
+                                    4.5 </p>
+                            </v-col>
+                            <v-col cols="3"></v-col>
+                        </v-row>
+                    </v-container>
+                    <a href="#" v-if="activeIndex === 2" style="color: #939393;font-size: 20px; "> يوجد 5343 تقييمات و
+                        239127 مراجعات
+                    </a>
+                    <div class="d-flex">
+                        <span v-if="activeIndex === 2" style="color: black;font-weight: 600;margin-left: 5px;"> Aya98
+                        </span>
+                        <p v-if="activeIndex === 2" style="color: #939393; ">21/3/2022
+                        </p>
+                        <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="compact"
+                            size="small" :value="3"></v-rating>
+
+                    </div>
+
+                    <p v-if="activeIndex === 2" style="color: #939393;"> حلووو ممتاز </p>
+                </div>
+
+                <!-- ========rate-section-phon-screen======= -->
+                <div class="rate-section-phon-screen mb-8">
+                    <v-container>
+                        <v-row>
+                            <v-col cols="1">
+                                <ul v-if="activeIndex === 2"
+                                    style=" line-height: 1.8;color: #000000; font-weight: 700;font-size: 24px;">
+                                    <li>5</li>
+                                    <li>4</li>
+                                    <li>3</li>
+                                    <li>2</li>
+                                    <li>1</li>
+                                </ul>
+                            </v-col>
+
+                            <v-col class="star-rating" cols="3" style="line-height: 2.1;">
+
+                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="dense"
+                                    size="small" :show-rating="trye" :value="3"></v-rating>
+
+                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="dense"
+                                    size="small" :show-rating="true" :value="3"></v-rating>
+                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="dense"
+                                    size="small" :show-rating="true" :value="3"></v-rating>
+                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="dense"
+                                    size="small" :show-rating="true" :value="3"></v-rating>
+                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="dense"
+                                    size="small" :show-rating="true" :value="3"></v-rating>
+                            </v-col>
+                            <v-col class="sec-ul-num" cols="1">
+                                <ul v-if="activeIndex === 2"
+                                    style=" line-height: 1.8; font-weight: 700;font-size: 24px;color: #000000;">
+                                    <li>20</li>
+                                    <li>10</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>3</li>
+                                </ul>
+                            </v-col>
+                            <v-col class="third-col-rate" cols="4">
+                                <p v-if="activeIndex === 2" style=" font-weight: 700;font-size: 24px;color: #000000;">
+                                    التقييم العام
+                                </p>
+                                <v-rating v-if="activeIndex === 2" readonly color="yellow-darken-2" density="dense"
+                                    size="small"></v-rating>
                                 <p v-if="activeIndex === 2" style=" font-weight: 700;font-size: 24px;color: #000000;">
                                     4.5 </p>
                             </v-col>
@@ -184,6 +253,10 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+.rate-section-phon-screen {
+    display: none;
+}
+
 .bottom-border {
     position: relative;
     z-index: -2;
@@ -278,14 +351,97 @@ ul li {
 }
 
 @media (max-width: 834px) {
+    .rate-section-phon-screen {
+        display: none !important;
+    }
+
     .wide-parg {
         width: 70%;
     }
+
+
 }
 
 @media (max-width: 375px) {
-    .wide-parg {
-        width: 70%;
+    .rate-section-phon-screen {
+        display: block !important;
     }
+
+    .rate-section {
+        display: none !important;
+    }
+
+    .container {
+        width: 50%;
+    }
+
+    .mybtn {
+        font-size: 15px
+    }
+
+    .allTabs[data-v-6f8fa183] {
+        margin-right: 0 !important;
+    }
+
+    .fun-facts {
+        position: absolute;
+        left: 0;
+        right: 10px;
+        font-size: 11px !important;
+    }
+
+    /* .contain-wide-paragraph {
+        height: 200px
+    } */
+
+    .wide-parg {
+        width: 36% !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 10px !important;
+    }
+
+    .rate-section-phon-screen {
+        width: 370px !important;
+    }
+
+    .rate-section-phon-screen li,
+    p,
+    a {
+        font-size: 12px !important;
+    }
+
+
+
+    .rate-section-phon-screen .v-rating {
+        width: 100px !important;
+        font-size: 10px !important;
+    }
+
+    .star-rating {
+        line-height: 1.4 !important;
+
+    }
+
+    .sec-ul-num ul {
+        margin-right: 20px;
+    }
+
+    .third-col-rate {
+        margin-right: 20px;
+    }
+
+
+
+    /* .wide-parg::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        max-width: calc(100% - 160px);
+       
+        margin-right: -100%;
+        background: white;
+        position: relative;
+    }  */
 }
 </style>

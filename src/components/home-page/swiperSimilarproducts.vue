@@ -131,7 +131,7 @@ export default {
 
 };
 </script>
-<style lang="scss">
+<style scoped lang="scss">
 .products-swiper {
 
     .swiper-button-prev {
@@ -174,6 +174,10 @@ export default {
         margin-right: 40px !important;
         display: contents;
         text-decoration-line: underline;
+    }
+
+    .products-swiper {
+        margin-top: 50px !important;
     }
 }
 </style>

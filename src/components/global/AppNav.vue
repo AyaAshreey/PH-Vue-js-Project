@@ -36,7 +36,7 @@
 
 
           <!-- ========================================================== -->
-          <v-col cols="6" style="padding-right: 50px;padding-left: 0; margin-right: 15px;">
+          <v-col class="input-col-container" cols="6" style="padding-right: 50px;padding-left: 0; margin-right: 15px;">
             <div id="search" class="position-relative" style="width: 100%;">
 
 
@@ -69,7 +69,7 @@
           <div class="overlay">
             <v-col cols="3" class="first-col d-flex flex-row align-center "
               style="gap: 15px ;padding-right: 35px; padding-bottom: 35px;">
-              <div>
+              <div class="login-link">
                 <a href="#"> تسجيل الدخول </a>
               </div>
 
@@ -96,39 +96,24 @@
 
           </div>
 
+          <!-- ==== -->
 
+          <div class="alt-burger-menu" style="gap: 15px ;margin-right: 70px; padding-bottom: 35px;">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
+              x="0px" y="0px" viewBox="0 0 512 512"
+              style="fill: #FFFFFF; cursor: pointer; enable-background:new 0 0 512 512;" xml:space="preserve"
+              width="20px">
 
-
-
-
-          <div class="burger-menu flex-row align-center">
-            <v-col cols="3" class="first-col d-flex flex-row align-center " style="gap: 15px ; padding-bottom: 35px;">
-
-              <div class="lang d-flex align-center text-white " style="gap: 5px; cursor: pointer" id="language-btn">
-                <!-- <span v-html="selectedState[0].icon"></span> -->
-
-                <v-icon>mdi-menu</v-icon>
-                <v-menu activator="#language-btn">
-                  <v-list v-model:selected="selectedState" mandatory>
-                    <v-list-item v-for=" lang  in  langs " :key="lang.lang" :value="lang">
-                      <v-list-item-title class="d-flex align-center" style="gap: 10px">
-                        <span v-html="lang.icon"> </span> {{ lang.lang }}
-                      </v-list-item-title>
-                    </v-list-item>
-                  </v-list>
-                </v-menu>
-              </div>
-
-
-
-
-
-
-
-
-            </v-col>
+              <g>
+                <path
+                  d="M480,224H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,224,480,224z" />
+                <path
+                  d="M32,138.667h448c17.673,0,32-14.327,32-32s-14.327-32-32-32H32c-17.673,0-32,14.327-32,32S14.327,138.667,32,138.667z" />
+                <path
+                  d="M480,373.333H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,373.333,480,373.333z" />
+              </g>
+            </svg>
           </div>
-
 
 
         </v-row>
@@ -136,7 +121,7 @@
         <!-- ================Second Row Nav -->
         <!-- ===================================================================== -->
 
-        <v-row class="mt-6" style="width:100% ; background-color: #024B31;position: fixed;
+        <v-row class="darkgreen-nav mt-6 " style="width:100% ; background-color: #024B31;position: fixed;
   top: 92px;
   left: 12px;">
 
@@ -321,7 +306,7 @@ export default {
   }),
 };
 </script>
-<style>
+<style scoped>
 #search {
   display: flex;
   flex-direction: row-reverse;
@@ -350,18 +335,29 @@ export default {
 
 }
 
-.overlay {
-  display: flex;
-}
-
-.burger-menu {
-  display: none
+.alt-burger-menu {
+  display: none;
 }
 
 @media screen and (max-width: 834px) {
+  #search {
+    width: 90% !important;
+    margin-right: -20px !important;
+  }
+
+  #search input::placeholder {
+    font-size: 12px;
+  }
+
+  .nav-logo {
+    width: 90%;
+    margin-right: 30px !important;
+    margin-top: 10px !important;
+  }
 
   .links {
     width: 700px;
+
   }
 
   .links a {
@@ -376,21 +372,72 @@ export default {
   .v-col-8 {
     width: 900px;
   }
-}
 
-@media screen and (max-width: 375px) {
-  .overlay {
+  .alt-burger-menu {
     display: none;
   }
 
-  .burger-menu {
-    display: block ruby;
-    margin-right: 350px;
-    margin-top: -29px;
+  .darkgreen-nav {
+    position: fixed !important;
+    top: 79px !important;
+    left: 12px !important;
+
   }
 
   .first-col {
+    display: block ruby !important;
+    padding-bottom: 35px !important;
+    position: absolute;
+    margin-right: -50px !important;
+    margin-top: 10px !important;
+  }
+
+  .first-col div {
+    margin-right: 10px !important;
+  }
+
+  .first-col svg {
+    width: 22px !important;
+  }
+
+  .first-col a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+
+  }
+
+  .first-col .Lang-btn {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 375px) {
+  .overlay {
     display: none !important;
+  }
+
+  .alt-burger-menu {
+    display: block !important;
+    position: absolute;
+    right: 265px;
+    top: 35px;
+    margin-right: 80px !important;
+
+  }
+
+  .help svg {
+    margin-left: -20px !important;
+    width: 15px;
+
+  }
+
+  .input-col-container {
+    padding-right: 40px !important;
+    margin-right: 0 !important;
   }
 
   .lang {
@@ -399,29 +446,56 @@ export default {
 
   .first-nav {
     width: 370px !important;
+    padding-bottom: 60px;
   }
 
   .nav-logo {
-    margin-right: 0;
-    border: 1px solid black;
+    margin-right: 10px !important;
     width: 105px;
+    margin-top: 12px;
   }
 
   #search {
     width: 200px !important;
     height: 20px !important;
+    margin-right: 20px !important;
   }
 
   /* =========== */
   .links {
-    border: 2px solid red;
-    justify-content: unset !important;
+    justify-content: start !important;
+    gap: 20px !important;
+    margin-right: 10px !important;
+  }
+
+  .links a {
+    margin-right: 0 !important;
   }
 
   .extra-link {
     display: none;
 
   }
+
+  #search svg {
+    position: absolute !important;
+    height: 40px !important;
+    top: 30px !important;
+    width: 25% !important;
+
+  }
+
+  #search input {
+    height: 40px !important;
+    position: absolute;
+    top: 10px !important;
+  }
+
+  #search input::placeholder {
+    font-size: 8px;
+  }
+
+
 
 }
 </style>

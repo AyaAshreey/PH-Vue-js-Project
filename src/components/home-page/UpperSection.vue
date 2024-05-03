@@ -323,13 +323,13 @@ input[type=number] {
 }
 
 @media (max-width:834px) {
-    .small-potiles {
+    /* .small-potiles {
         margin-right: 51px;
-    }
+    } */
 
     .potilss li {
         display: inline-block;
-        width: 17% !important;
+        width: 15% !important;
 
     }
 
@@ -381,13 +381,13 @@ input[type=number] {
         font-size: 14px;
     }
 
-    .small-potiles {
+    /* .small-potiles {
         margin-right: -27px;
-    }
+    } */
 
     .potilss li {
         display: inline-block;
-        width: 19% !important;
+        width: 22% !important;
 
     }
 

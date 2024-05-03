@@ -1,5 +1,5 @@
 <template>
-    <div class="products-swiper mb-16 ">
+    <div class="products-swiper swiper-small-screen mb-16 ">
         <div class="titl d-flex justify-space-between align-center mb-5">
             <h3 style="font-weight: 700; color: #000000;  font-size: 30px; margin-right: 100px;">
                 المزيد من هذه الماركة </h3>
@@ -135,7 +135,30 @@ export default {
 
 };
 </script>
-<style lang="scss">
+<style scoped lang="scss">
+@media (max-width:375px) {
+    .mb-16 {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .titl {
+        width: 370px !important;
+    }
+
+    .titl h3 {
+        margin-right: 40px !important;
+        font-size: 15px !important;
+    }
+
+    .titl a {
+        font-size: 13px !important;
+        margin-right: 40px !important;
+        display: contents;
+        text-decoration-line: underline;
+    }
+}
+
 .products-swiper {
 
     .swiper-button-prev {
