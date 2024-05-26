@@ -9,10 +9,8 @@
                         <v-row>
                             <v-col cols="12">
                                 <div class="parent  ">
-                                    <p class="text" style="font-weight: 600; color: #939393;font-size: 22px;">نحن دائما
-                                        جاهزون
-                                        لمساعدتك
-                                    </p>
+                                    <p class="text" style="font-weight: 600; color: #939393;font-size: 22px;">
+                                        {{ $t('footer.readyToHelp') }}</p>
                                 </div>
                             </v-col>
                         </v-row>
@@ -21,7 +19,7 @@
                     <v-col cols="12" sm="12" md="12" lg="4">
                         <v-row>
                             <v-col cols="12">
-                                <div class="parent second d-flex align-center justify-center "
+                                <div :class="['parent', 'second', 'd-flex', 'align-center', 'justify-center', localeClass]"
                                     style="  padding-right: 130px;">
                                     <span class="text" style="font-weight: 600; color: #939393;font-size: 22px;">
                                         ahmed99@gmail.com </span>
@@ -31,8 +29,6 @@
                                             d="M38.2559 8.0625H15.7559C9.00586 8.0625 4.50586 11.4375 4.50586 19.3125V35.0625C4.50586 42.9375 9.00586 46.3125 15.7559 46.3125H38.2559C45.0059 46.3125 49.5059 42.9375 49.5059 35.0625V19.3125C49.5059 11.4375 45.0059 8.0625 38.2559 8.0625ZM39.3134 21.765L32.2709 27.39C30.7859 28.5825 28.8959 29.1675 27.0059 29.1675C25.1159 29.1675 23.2034 28.5825 21.7409 27.39L14.6984 21.765C13.9784 21.18 13.8659 20.1 14.4284 19.38C15.0134 18.66 16.0709 18.525 16.7909 19.11L23.8334 24.735C25.5434 26.1075 28.4459 26.1075 30.1559 24.735L37.1984 19.11C37.9184 18.525 38.9984 18.6375 39.5609 19.38C40.1459 20.1 40.0334 21.18 39.3134 21.765Z"
                                             fill="#939393" />
                                     </svg>
-
-
                                 </div>
                             </v-col>
                         </v-row>
@@ -67,11 +63,11 @@
                 <!-- =========================================================== -->
                 <v-row style="margin-top: 55px;" justify="center">
                     <v-col cols="12" sm="6" md="4" lg="3">
-                        <v-card elevation="0" color="transparent" class="first-card text-start ">
-                            <img src="../../assets/images/logo 1.png" alt="">
-                            <v-card-text
-                                style="font-weight: 700; font-size: 24px; text-align: right; line-height: 29.20px;">
-                                تواصل معنا
+                        <v-card elevation="0" color="transparent" class="first-card text-start "
+                            style="margin-right: 39px;">
+                            <img src="../../assets/images/logo 1.png" alt="" style="margin-right: -11px;">
+                            <v-card-text style="font-weight: 700; font-size: 24px; line-height: 29.20px;">
+                                {{ $t('footer.contactUs') }}
                             </v-card-text>
                             <!-- ===========icon list =============== -->
                             <ul class="d-flex mr-4 " style="list-style: none; gap: 20px;">
@@ -121,12 +117,12 @@
                                 </li>
 
                             </ul>
-                            <v-card-text style="font-weight: 700; font-size: 17px; color: #FFFFFF;"> للاشتراك في النشرة
-                                البريدية
+                            <v-card-text style="font-weight: 700; font-size: 17px; color: #FFFFFF;">
+                                {{ $t('footer.subscribe') }}
                             </v-card-text>
                             <input type="search" name="footerSearch" id="footerSearch"
                                 style="width: 250px; height: 40px; border-radius: 7px; outline: none"
-                                placeholder="اكتب البريد الالكتروني  " class="bg-white py-3 px-5 mr-3 " />
+                                :placeholder="$t('footer.email')" class="bg-white py-3 px-5 mr-3 " />
 
                         </v-card>
                     </v-col>
@@ -139,15 +135,19 @@
                                 <v-card elevation="0" color="transparent" class="shopus-card text-start pl-0">
                                     <v-card-title
                                         style="font-weight: 600; font-size: 20px;line-height: 30px; color: #FFFFFF ">
-                                        تسوق معنا</v-card-title>
-                                    <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;"> حسابك
+                                        {{ $t('footer.ShopWithUs') }}</v-card-title>
+                                    <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;"> {{
+            $t('footer.account') }}
                                     </v-card-text>
-                                    <v-card-text style=" font-weight: 600; font-size: 20px;color: #C5C5C5;"> تتبع طلبك
+                                    <v-card-text style=" font-weight: 600; font-size: 20px;color: #C5C5C5;"> {{
+            $t('footer.yourorder') }}
                                     </v-card-text>
-                                    <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;"> طريقة الدفع
+                                    <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;"> {{
+            $t('footer.paymentMethod') }}
                                     </v-card-text>
-                                    <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;"> الشحن
-                                        والتوصيل
+                                    <v-card-text style=" font-weight: 600;font-size: 20px;color: #C5C5C5;">
+                                        {{
+            $t('footer.ShippingDelivery') }}
                                     </v-card-text>
                                 </v-card>
                             </v-col>
@@ -157,19 +157,23 @@
                                     style="width: 233px;">
                                     <v-card-title
                                         style="font-weight: 600; font-size: 20px;line-height: 60px; color: #FFFFFF ">
-                                        اعرف المزيد عننا</v-card-title>
+                                        {{
+            $t('footer.LearnMore') }}</v-card-title>
                                     <v-card-text
                                         style=" font-weight: 600;font-size: 20px;color: #C5C5C5;line-height: 30px;">
-                                        مدونتنا
+                                        {{
+            $t('footer.OurBlog') }}
                                     </v-card-text>
                                     <v-card-text
                                         style=" font-weight: 600;font-size: 20px;color: #C5C5C5;line-height: 30px;">
-                                        سياسة الخصوصية
+                                        {{
+            $t('footer.privacyPolicy') }}
                                     </v-card-text>
                                     <v-card-text
                                         style=" font-weight: 600;font-size: 20px;color: #C5C5C5;line-height: 30px;">
-                                        سياسة الاستبدال
-                                        والاسترجاع </v-card-text>
+                                        {{
+                                        $t('footer.Exchange') }}
+                                    </v-card-text>
 
 
 
@@ -187,17 +191,21 @@
                         <v-card class="text-right " elevation="0" color="transparent"
                             style="gap: 42px; padding: 10px; line-height: 80px">
                             <v-card-title style="font-weight: 600; font-size: 21px;line-height: 80px ; color: #FFFFFF;">
-                                حمل التطبيق
-                                من هنا</v-card-title>
+                                {{
+                                $t('footer.DownloadApp') }}
+                            </v-card-title>
                             <div id="app-download-images">
-                                <a href="https://play.google.com/store/games?hl=en&gl=US">
+
+                                <router-link to="/">
                                     <img src="../../assets/images/google.png" alt=""
                                         style="width: 170px;margin-right: 15px;">
-                                </a>
-                                <a href="https://www.apple.com/eg/app-store/">
+                                </router-link>
+
+                                <router-link to="/">
                                     <img src="../../assets/images/play store.png" alt=""
                                         style="width: 170px;margin-right: 15px;">
-                                </a>
+                                </router-link>
+
                             </div>
                         </v-card>
                     </v-col>
@@ -212,7 +220,8 @@
                 <!-- =========================================================== -->
 
 
-                <v-row class="pt-2 bg-white" style="right: 0;left: 0;position: absolute; margin-bottom: 10px">
+                <v-row class="pt-2 bg-white copyright-row" style=" margin-right: 35px;
+  margin-left:67px; right: 0;left: 0;position: absolute; margin-bottom: 10px">
 
                     <v-col class="master-cards-col" cols="12" md="6">
                         <div class="master-cards d-flex justify-center justify-md-start " style="gap: 5px;">
@@ -381,6 +390,7 @@
 </template>
 <script>
 export default {
+
     data: () => ({
         svgs: [
             `<svg width="52" height="32" viewBox="0 0 52 32" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -457,10 +467,23 @@ export default {
 </svg>
 `,
         ],
-    })
+    }),
+
+    computed: {
+        localeClass() {
+            return this.$i18n.locale === 'en' ? 'lang-en' : '';
+        },
+        mailWhatsupSvg(){
+            return this.$i18n.locale === 'en' ? 'lang-en' : '';
+        }
+    }
 };
 </script>
 <style scoped>
+.v-locale--is-ltr {
+    direction: unset !important;
+}
+
 .second {
     position: relative;
 }
@@ -477,6 +500,12 @@ export default {
     width: 2px;
     height: 70%;
     border-radius: 30%;
+
+}
+
+.lang-en .second::before {
+
+    right: 25px;
 
 }
 
@@ -626,6 +655,15 @@ export default {
         max-width: 150px;
         /* Adjust the maximum width of the images */
         margin-right: 0;
+    }
+
+    .copyright-row {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    .copy-right {
+        justify-content: start;
     }
 
 

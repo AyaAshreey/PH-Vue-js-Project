@@ -1,28 +1,36 @@
 <template>
     <div class="container mb-3 text-start" style="width: 90%">
-        <div class="allTabs">
-            <button class="mybtn" :class="{ 'active-btn': activeIndex === 0 }" @click="toggleTab(0)">معلومات</button>
-            <button class="mybtn" :class="{ 'active-btn': activeIndex === 1 }" @click="toggleTab(1)">تفاصيل</button>
-            <button class="mybtn" :class="{ 'active-btn': activeIndex === 2 }" @click="toggleTab(2)">التقييم</button>
+        <div class="allTabs" :style="allTabsStyling">
+            <button class="mybtn" :class="{ 'active-btn': activeIndex === 0 }" @click="toggleTab(0)">{{
+            $t('infoPart.title1')
+        }}</button>
+            <button class="mybtn" :class="{ 'active-btn': activeIndex === 1 }" @click="toggleTab(1)">{{
+            $t('infoPart.title2')
+        }}</button>
+            <button class="mybtn" :class="{ 'active-btn': activeIndex === 2 }" @click="toggleTab(2)">{{
+            $t('infoPart.title3')
+        }}</button>
             <hr class="bottom-border">
         </div>
 
-        <div class="parent-all-article">
+        <div class="parent-all-article" style="margin-right: 15px;">
             <article class="fun-facts " v-for="(fact, index) in facts" :key="index"
                 :class="{ 'active-article': activeIndex === index }">
-                <h4 style=" color: #939393; font-weight: 700;">{{ fact.title }}</h4>
-                <ul>
-                    <li style="color: #939393;" v-for="item in fact.items" :key="item">{{ item }}</li>
+                <h4 style=" color: #939393; font-weight: 700; margin-bottom: 20px;">{{ fact.title }}</h4>
+                <ul style="line-height: 25px;">
+                    <li style="color: #939393; font-size: 13px;" v-for="item in fact.items" :key="item">{{ item }}</li>
                 </ul>
-                <h4 v-if="activeIndex === 0" style="color: #939393;font-weight: 700;margin-top: 10px;">{{ fact.secTitle
+                <h4 v-if="activeIndex === 0"
+                    style="color: #939393;font-weight: 700;margin-top: 20px;margin-bottom: 20px;">{{ fact.secTitle
                     }}</h4>
 
 
                 <!-- <p class="wide-parg" v-if="activeIndex === 0" style="color: #939393; font-size: 14px;">{{ fact.secItem }}</p> -->
                 <div class="contain-wide-paragraph">
                     <p class="wide-parg" v-if="activeIndex === 0"
-                        :style="{ color: '#939393', fontSize: '14px', width: screenWidth <= 834 ? '70%' : 'auto' }">{{
-                fact.secItem }}</p>
+                        :style="{ color: '#939393', fontSize: '13px', lineHeight: '25px', width: screenWidth <= 834 ? '70%' : 'auto' }">
+                        {{
+            fact.secItem }}</p>
                 </div>
 
 
@@ -34,7 +42,7 @@
                     <v-row>
                         <v-col cols="2">
                             <p v-if="activeIndex === 1" style="color: #939393; font-size: 20px; line-height: 3;"> {{
-                fact.Section }} </p>
+            fact.Section }} </p>
                             <p v-if="activeIndex === 1" style="color: #939393;font-size: 20px;
   line-height: 3;"> {{ fact.size }} </p>
                             <p v-if="activeIndex === 1" style="color: #939393;font-size: 20px;
@@ -42,7 +50,7 @@
                         </v-col>
                         <v-col cols="2">
                             <p v-if="activeIndex === 1" style="color: black; font-size: 20px; line-height: 3;"> {{
-                fact.Sectionval }} </p>
+            fact.Sectionval }} </p>
                             <p v-if="activeIndex === 1" style="color: black;font-size: 20px;
   line-height: 3;"> {{ fact.sizeval }} </p>
                             <p v-if="activeIndex === 1" style="color: black;font-size: 20px;
@@ -195,64 +203,66 @@
 </template>
 
 
-<script setup>
+<script>
+export default {
+    data() {
+        return {
+            activeIndex: 0,
+            facts: [
+                {
+                    title: "الميزات الاساسية ",
+                    items: [
+                        "مستحضر يترك بشرتك هادئة ومعطرة برائحة خفيفة طوال اليوم",
+                        "تركيبة غير دهنية تذوب بسرعة في البشرة",
+                        "ينعش ويرطب البشرة بفضل زيت الجوجوبا وفيتامين E",
+                        "فعال للغاية على الوجه واليدين والجسم",
+                        "دع بشرتك تختبر العجائب الاستوائية مع كريم الترطيب هذا"
+                    ],
+                    secTitle: "نظرة عامة",
+                    secItem: "Revive your skin and enjoy the delicate moisturizing cream with a joyful zesty scent of tropical fruits. NIVEA Soft Freshies absorbs quickly into the skin, making the skin feel refreshingly moist. Caring formula with Vitamine E and Jojoba Oil makes your skin feel noticeably relaxed, refreshed and smoother. For your handbag or at home: NIVEA Soft. Ingredients:- Aqua, Glycerin, Paraffinum Liquidum, Myristyl Alcohol, Butylene Glycol, Alcohol Denat., Stearic Acid, Myristyl Myristate, Cera Microcristallina, Glyceryl Stearate, Hydrogenated Coco-Glycerides, Simmondsia Chinensis Seed Oil, Tocopheryl Acetate, Lanolin Alcohol (Eucerit), Polyglyceryl-2 Caprate, Dimethicone, Sodium Hydroxide, Carbomer, Phenoxyethanol, Limonene, Coumarin, Citronellol, Parfum.",
 
-
-import { ref, onUnmounted } from 'vue';
-
-const activeIndex = ref(0);
-
-const facts = [
-    {
-        title: "الميزات الاساسية ",
-        items: [
-            "مستحضر يترك بشرتك هادئة ومعطرة برائحة خفيفة طوال اليوم",
-            "تركيبة غير دهنية تذوب بسرعة في البشرة",
-            "ينعش ويرطب البشرة بفضل زيت الجوجوبا وفيتامين E",
-            "فعال للغاية على الوجه واليدين والجسم",
-            "دع بشرتك تختبر العجائب الاستوائية مع كريم الترطيب هذا"
-        ],
-        secTitle: "نظرة عامة",
-        secItem: "Revive your skin and enjoy the delicate moisturizing cream with a joyful zesty scent of tropical fruits. NIVEA Soft Freshies absorbs quickly into the skin, making the skin feel refreshingly moist. Caring formula with Vitamine E and Jojoba Oil makes your skin feel noticeably relaxed, refreshed and smoother. For your handbag or at home: NIVEA Soft. Ingredients:- Aqua, Glycerin, Paraffinum Liquidum, Myristyl Alcohol, Butylene Glycol, Alcohol Denat., Stearic Acid, Myristyl Myristate, Cera Microcristallina, Glyceryl Stearate, Hydrogenated Coco-Glycerides, Simmondsia Chinensis Seed Oil, Tocopheryl Acetate, Lanolin Alcohol (Eucerit), Polyglyceryl-2 Caprate, Dimethicone, Sodium Hydroxide, Carbomer, Phenoxyethanol, Limonene, Coumarin, Citronellol, Parfum."
+                },
+                {
+                    Section: "القسم :",
+                    size: "الحجم :",
+                    modelNo: "رقم الموديل :",
+                    Sectionval: "للجنسين",
+                    sizeval: " 30 وحدة ",
+                    modelNoval: " 119269 ",
+                },
+                {
+                    title: "",
+                    items: ""
+                },
+            ],
+        };
     },
-    {
-        Section: "القسم :",
-        size: "الحجم :",
-        modelNo: "رقم الموديل :",
+    computed: {
+        screenWidth() {
+            return window.innerWidth;
+        },
+        allTabsStyling() {
+            return {
+                'margin-right': this.$i18n.locale === 'ar' ? '80px' : '0',
+                'margin-left': this.$i18n.locale === 'en' ? '80px' : '0',
+                marginTop: '30px'
+            };
 
-        Sectionval: "للجنسين",
-        sizeval: " 30 وحدة ",
-        modelNoval: " 119269 ",
+        }
     },
-    {
-        title: "",
-        items: ""
-    }
-];
-
-function toggleTab(index) {
-    activeIndex.value = index;
-}
-const screenWidth = ref(window.innerWidth);
-
-const updateScreenWidth = () => {
-    screenWidth.value = window.innerWidth;
+    methods: {
+        toggleTab(index) {
+            this.activeIndex = index;
+        },
+    },
 };
-
-window.addEventListener('resize', updateScreenWidth);
-
-onUnmounted(() => {
-    window.removeEventListener('resize', updateScreenWidth);
-});
-
-
-
-
-
-
 </script>
 
 <style scoped>
+.v-locale--is-ltr {
+    direction: unset !important;
+}
+
 .rate-section-phon-screen {
     display: none;
 }
@@ -264,11 +274,6 @@ onUnmounted(() => {
     border: 4px solid #F1F1F1;
     bottom: 14px;
     right: 7px;
-}
-
-.allTabs {
-    margin-top: 30px;
-    margin-right: 80px;
 }
 
 .mybtn {
@@ -395,10 +400,11 @@ ul li {
     } */
 
     .wide-parg {
-        width: 36% !important;
+        width: 34% !important;
         overflow: hidden;
         text-overflow: ellipsis;
         font-size: 10px !important;
+        line-height: 16px !important;
     }
 
     .rate-section-phon-screen {

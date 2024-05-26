@@ -2,15 +2,15 @@
     <div class="cart-drawer">
         <v-navigation-drawer location="right" temporary v-model="drawer">
 
-            <h3><a href=""> الكل </a></h3>
-            <h3><a href=""> العناية بالشعر </a></h3>
-            <h3> <a href=""> العناية بالبشرة </a></h3>
-            <h3><a href=""> العناية بالرجل </a></h3>
-            <h3><a href=""> العناية بالمرأة </a></h3>
-            <h3><a href=""> العناية بالطفل </a></h3>
-            <h3><a href=""> الصيدلية الحيوانية </a></h3>
-            <h3><a href=""> الماركات </a></h3>
-            <h3><a href=""> العروض </a></h3>
+            <h3><router-link to="/">الكل</router-link></h3>
+            <h3> <router-link to="/">العناية بالشعر </router-link> </h3>
+            <h3> <router-link to="/">العناية بالبشرة </router-link> </h3>
+            <h3> <router-link to="/">العناية بالرجل </router-link> </h3>
+            <h3> <router-link to="/">العناية بالمرأة </router-link> </h3>
+            <h3> <router-link to="/">العناية بالطفل</router-link> </h3>
+            <h3> <router-link to="/">الصيدلية الحيوانية</router-link> </h3>
+            <h3> <router-link to="/">الماركات</router-link> </h3>
+            <h3> <router-link to="/">العروض</router-link> </h3>
         </v-navigation-drawer>
     </div>
 </template>

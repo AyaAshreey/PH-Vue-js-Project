@@ -32,7 +32,8 @@ export default {
     ...mapState(productsModule, ["flashDeals", "newProducts"])
   },
   methods: {
-    ...mapActions(productsModule, ["getProducts"])
+    ...mapActions(productsModule, ["getProducts"]),
+
   },
   async mounted() {
     await this.getProducts();

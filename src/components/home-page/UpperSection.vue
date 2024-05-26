@@ -8,9 +8,9 @@
             <v-row>
                 <v-col cols="12" sm="12" md="12" lg="4">
                     <div class="title d-flex  align-center mr-3" style="gap: 4px;">
-                        <h3 style="color: #939393;  font-weight: 500;">الرئيسية </h3>
+                        <h3 style="color: #939393;  font-weight: 500;">{{ $t('upperSec.main') }} </h3>
                         <v-icon style="color: #939393; font-weight: 500;">mdi-chevron-left</v-icon>
-                        <h3 style="font-weight: 700;"> الفيتامينات الغذائية </h3>
+                        <h3 style="font-weight: 700;"> {{ $t('upperSec.vitamin') }} </h3>
                     </div>
                 </v-col>
             </v-row>
@@ -22,7 +22,7 @@
             <v-row>
                 <!-- ============================First col================================ -->
 
-                <v-col cols="12" sm="12" md="12" lg="2">
+                <v-col cols="12" sm="12" md="12" lg="2" class="pl-0">
 
                     <v-row justify="center">
                         <v-col cols="12">
@@ -30,19 +30,18 @@
                                 <ul class="potilss" style="list-style: none">
 
                                     <li
-                                        style="width: 60%; border: 1px solid #E5E5E5; margin: 10px; border-radius: 7px;">
+                                        style="width: 85%;  border: 1px solid #E5E5E5;  border-radius: 7px; margin-bottom: 10px">
                                         <img src="../../assets/images/centrum-centrum-multigummies-150-units 4s-centrum.png"
-                                            alt="" style="width: 60px ; height: 80px;">
+                                            alt="" style="width: 111px; height: 122.75px;">
                                     </li>
                                     <li
-                                        style="width: 60%; height: 45%; border: 1px solid #E5E5E5; margin: 10px; border-radius: 7px;">
+                                        style="width: 85%; height: 45%; border: 1px solid #E5E5E5; border-radius: 7px; margin-bottom: 10px;">
                                         <img src="../../assets/images/centrum-centrum-multigummies-150-units 4s-centrum.png"
-                                            alt="" style="width: 60px ; height: 80px;">
+                                            alt="" style="width: 111px; height: 122.75px;">
                                     </li>
-                                    <li
-                                        style="width: 60%; height: 45%; border: 1px solid #E5E5E5; margin: 10px; border-radius: 7px;">
+                                    <li style="width: 85%; height: 45%; border: 1px solid #E5E5E5; border-radius: 7px;">
                                         <img src="../../assets/images/centrum-centrum-multigummies-150-units 4s-centrum.png"
-                                            alt="" style="width: 60px ; height: 80px;">
+                                            alt="" style="width: 111px; height: 122.75px;">
                                     </li>
 
                                 </ul>
@@ -57,14 +56,17 @@
                 </v-col>
 
                 <!-- ============================second col================================ -->
-                <v-col cols="12" sm="12" md="8" lg="4" class="">
+                <v-col cols="12" sm="12" md="8" lg="4" class="pr-0">
 
 
                     <v-row justify="center">
                         <v-col cols="12">
-                            <div class="big-bottel">
-                                <ul style="list-style: none; position: absolute ; right: 320px;top: 284px;">
-                                    <li class="mb-5 heart-icon">
+                            <div class="big-bottel" style="position: relative;">
+                                <ul style="list-style: none; position: absolute ; right: 30px; top: 20px;">
+
+
+                                    <li @click="toggleHeart" class="mb-5 heart-icon"
+                                        :class="{ 'red-heart': isHeartFilled }">
                                         <svg width="37" height="35" viewBox="0 0 55 53" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -77,6 +79,7 @@
                                         </svg>
 
                                     </li>
+
                                     <li class="share-icon">
                                         <svg width="37" height="35" viewBox="0 0 50 56" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -92,9 +95,8 @@
 
 
                                 </ul>
-                                <span class="glass-victor" style="list-style: none; position: absolute ; right: 590px;
-  top: 650px;">
-
+                                <span class="glass-victor"
+                                    style="list-style: none; position: absolute ; left: 30px; bottom: 20px;">
                                     <svg width="40" height="46" viewBox="0 0 56 56" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M21.4667 27.3H33.1333" stroke="#939393" stroke-width="3"
@@ -125,16 +127,16 @@
 
                 </v-col>
                 <!-- ============================third col================================ -->
-                <v-col cols="12" sm="12" md="12" lg="5" class="mr-16">
+                <v-col cols="12" sm="12" md="12" lg="5" :style="detailColStyle">
 
 
                     <v-row justify="center">
                         <v-col cols="12">
                             <div class="contain-thid-part">
                                 <div class="first-part" style="border: 2px solid #C5C5C5; border-radius: 10px;">
-                                    <div class="more-brand  d-flex justify-space-between ">
+                                    <div class="  d-flex justify-space-between ">
                                         <img src="../../assets/images/Rectangle 4409.png" alt="" style="width: 100px;">
-                                        <div class="more-brand " style="margin-left: 130px; margin-top: 4px;">
+                                        <div class="more-brand " :style="moreBrandStyle">
                                             <p style="font-weight: 700;">ORIGINAL 100%</p>
                                             <a href="#" style="color: #939393;">المزيد من هذه الماركة</a>
                                         </div>
@@ -143,14 +145,14 @@
                                 <!-- ================== -->
                                 <div class="second-part mt-3">
                                     <div class="d-flex justify-space-between align-center ">
-                                        <p style="font-weight: 700; font-size: 22px; line-height: 34.13px;">سنتروم</p>
+                                        <p style="font-weight: 700; font-size: 18px; line-height: 34.13px;">سنتروم</p>
                                         <p
-                                            style="color: #036C46; font-weight: 500; font-size: 18px; line-height: 26.82px;">
+                                            style="color: #036C46; font-weight: 500; font-size: 16px; line-height: 26.82px;">
                                             اكسب 10
                                             نقاط</p>
                                     </div>
                                     <p
-                                        style="text-align: right; color: #939393; font-weight: 400; font-size: 22px; line-height: 29.26px;">
+                                        style="text-align: right; color: #939393; font-weight: 400; font-size: 18px; line-height: 29.26px;">
                                         فيتامينات متعددة للطاقة - 30 قرص</p>
                                 </div>
                                 <!-- ================================ -->
@@ -175,46 +177,48 @@
                                         <span style="color: white; font-weight: 700; margin-right: 4px;">4.5</span>
                                     </div>
 
-                                    <a href=""
-                                        style="color: #036C46; margin-right: 10px; font-weight: 400; font-size: 18px;">
+                                    <a href="" :style="evaluationStyle">
                                         245
                                         تقييمات </a>
                                 </div>
                                 <!-- =================== -->
-                                <div class="pro-num text-start mt-3" style="font-size: 20px; font-weight: 500;">
+                                <div class="pro-num text-start mt-3" style="font-size: 18px; font-weight: 500;">
                                     <p>رقم المنتج : 45099</p>
                                 </div>
                                 <!-- =================== -->
-                                <div class="price-before text-start  mt-3" style="color: #939393; font-weight: 600;">
+                                <div class="price-before text-start  mt-3" style="color: #939393; font-weight: 500;">
                                     <p>قبل : <del>1400.00</del> ر.س</p>
                                 </div>
                                 <!-- =================== -->
 
                                 <div class="price-now  text-start  mt-3">
-                                    <p style="font-weight: 800; font-size: 18px; color: black;"> الآن : 1300.00 ر.س
+                                    <p style="font-weight: 700; font-size: 16px; color: black;"> الآن : 1300.00 ر.س
                                         <span style="color: #939393; ">(شامل القيمة المضافة) </span>
                                     </p>
                                 </div>
 
                                 <div class="offer text-start  mt-3 d-flex">
                                     <p> وفرت 130.00 ر.س </p>
-                                    <span
-                                        style="margin-right: 15px; background-color: #E53E3E; color: white; font-weight: 700; padding: 3px 5px; border-radius: 5px;">خصم
+                                    <span :style="discountStyle">خصم
                                         15%</span>
                                 </div>
                                 <!-- =================== -->
-                                <div class="parent-box mt-10 " style="position: relative;">
-                                    <div class="upper-box">
-                                        <p style=" font-weight: 600;"> افضل قيمة </p>
-                                    </div>
-                                    <div class="squars d-flex ">
+                                <div class="parent-box mt-10 ">
 
-                                        <div class="first-box ml-3">
-                                            <p> 3 عبوات</p>
-                                            <p> 1900 ر.س <span style="color: #C5C5C5;"> 2000 ر.س</span> </p>
+                                    <div class="squars d-flex ">
+                                        <div style="position: relative;">
+                                            <div class="upper-box" :style="upperBoxStyle">
+                                                <p style=" font-weight: 600;"> افضل قيمة </p>
+                                            </div>
+                                            <div class="first-box" :style="firstBoxStyle">
+                                                <p> 3 عبوات</p>
+                                                <p> 1900 ر.س <span style="color: #C5C5C5;"> 2000 ر.س</span> </p>
+                                            </div>
                                         </div>
 
-                                        <div class="small-box ml-3">
+
+
+                                        <div class="small-box" :style="smallBoxStyle">
                                             <p> 6 عبوات</p>
                                             <p> 1900 ر.س <span style="color: #C5C5C5;"> 2000 ر.س </span></p>
                                         </div>
@@ -228,16 +232,22 @@
                                 </div>
                                 <!-- =================== -->
                                 <div class="btn-input d-flex  mt-5">
-                                    <span class="btn-icon d-flex">
+                                    <span class="btn-icon d-flex" :style="btnIconStyle">
+
                                         <input class="input-quantity" dir="rtl" id="input-quantity" min="1" value="1"
                                             type="number">
+
                                         <v-icon style="height: 24px; font-size: 18px; color: #939393;"
                                             class="mr-0">mdi-chevron-down</v-icon>
                                     </span>
 
-                                    <v-btn
-                                        style="background: #FFBD1F;color: white;font-size: 17px;font-weight: 700;letter-spacing: revert;width: 70%;padding: 9px 70px">
-                                        اضافة الي عربة التسوق </v-btn>
+
+
+                                    <v-btn @click="addToCart(item)" style="background: #FFBD1F;color: white;font-size: 17px;font-weight:
+                                        700;letter-spacing: revert;width: 82%;padding: 9px 70px">
+                                        {{ $t('button.firstBtn') }} </v-btn>
+
+
                                 </div>
 
                             </div>
@@ -259,7 +269,115 @@
         </v-container>
     </div>
 </template>
+
+<script>
+import { mapGetters } from 'vuex';
+export default {
+    data() {
+        return {
+            isHeartFilled: false
+        };
+    },
+    methods: {
+        addToCart(product) {
+            console.log("product", product);
+            this.$store.dispatch("addToCart", product);
+        },
+        computed: {
+            // Map the cartItemCount getter to the component's computed properties
+            ...mapGetters(['cartItemCount']),
+        },
+        toggleHeart() {
+            this.isHeartFilled = !this.isHeartFilled;
+        }
+    },
+    computed: {
+        detailColStyle() {
+            return {
+                'margin-right': this.$i18n.locale === 'ar' ? '64px' : '0',
+                'margin-left': this.$i18n.locale === 'ar' ? '0' : '64px',
+
+
+            };
+
+        },
+
+        moreBrandStyle() {
+            return {
+                'margin-left': this.$i18n.locale === 'ar' ? '130px' : '0',
+                'margin-right': this.$i18n.locale === 'ar' ? '0' : '110px',
+                marginTop: '4px',
+
+            };
+
+        },
+        evaluationStyle() {
+            return {
+                color: '#036C46',
+                fontWeight: '400',
+                fontSize: '16px',
+                'margin-right': this.$i18n.locale === 'ar' ? '10px' : '0',
+                'margin-left': this.$i18n.locale === 'ar' ? '0' : '10px',
+            };
+        },
+        discountStyle() {
+            return {
+                'margin-right': this.$i18n.locale === 'ar' ? '15px' : '0',
+                'margin-left': this.$i18n.locale === 'ar' ? '0' : '15px',
+                backgroundColor: 'rgb(229, 62, 62)',
+                color: 'white',
+                fontWeight: '700',
+                fontSize: '13px',
+                padding: '3px 5px',
+                borderRadius: '5px'
+            };
+        },
+        btnIconStyle() {
+            return {
+                border: ' 1px solid #E5E5E5',
+                width: '60px',
+                padding: '6px',
+                'margin-left': this.$i18n.locale === 'ar' ? '30px' : '0',
+                borderRadius: '8px',
+                'margin-right': this.$i18n.locale === 'ar' ? '0' : '30px',
+            };
+        },
+        smallBoxStyle() {
+            return {
+                'margin-left': this.$i18n.locale === 'ar' ? '12px' : '0',
+                'margin-right': this.$i18n.locale === 'ar' ? '0' : '12px',
+            };
+        },
+        firstBoxStyle() {
+            return {
+                'margin-left': this.$i18n.locale === 'ar' ? '12px' : '0',
+                'margin-right': this.$i18n.locale === 'ar' ? '0' : '12px',
+            };
+        },
+        upperBoxStyle() {
+            return {
+                'right': this.$i18n.locale === 'ar' ? '4px' : '16px',
+            };
+        },
+
+
+
+
+
+
+    },
+};
+</script>
+
 <style scoped>
+.v-locale--is-ltr {
+    direction: unset;
+}
+
+.red-heart path {
+    fill: red;
+}
+
 .upper-box {
     width: 110px;
     border-radius: 20px;
@@ -282,6 +400,7 @@
     border-bottom: 1px solid #036C46;
     border-left: 1px solid #036C46;
     font-size: 12px;
+    width: 160px;
 }
 
 .small-box {
@@ -291,16 +410,7 @@
     border: 1px solid #C5C5C5;
     font-size: 12px;
     text-align: right;
-}
-
-.btn-icon {
-    border: 1px solid #E5E5E5;
-    width: 60px;
-    padding: 5px;
-    margin-left: 20px;
-    padding: 6px;
-    margin-left: 30px;
-    border-radius: 8px;
+    width: 200px;
 }
 
 .input-quantity {
@@ -322,6 +432,8 @@ input[type=number] {
     /* Firefox */
 }
 
+
+
 @media (max-width:834px) {
     /* .small-potiles {
         margin-right: 51px;
@@ -330,7 +442,7 @@ input[type=number] {
     .potilss li {
         display: inline-block;
         width: 15% !important;
-
+        margin-left: 20px;
     }
 
     .big-bottel {
@@ -342,20 +454,21 @@ input[type=number] {
     .heart-icon {
         position: absolute;
         left: 45px;
-        top: 130px;
+        top: 160px;
+        cursor: pointer;
     }
 
     .share-icon {
         position: absolute;
         left: 45px;
-        top: 190px;
+        top: 220px;
     }
 
     .glass-victor svg {
         list-style: none;
         position: absolute;
         left: 10px;
-        top: 170px;
+        top: 200px;
     }
 
     .contain-thid-part {
@@ -391,6 +504,14 @@ input[type=number] {
 
     }
 
+    .potilss img {
+        width: 35.53px !important;
+        height: 49.53px !important;
+
+    }
+
+
+
     .big-bottel {
         display: inline-block;
         width: 80%;
@@ -399,8 +520,8 @@ input[type=number] {
 
     .heart-icon {
         position: absolute;
-        left: 200px;
-        top: 116px;
+        left: 220px;
+        top: 150px;
     }
 
     .heart-icon svg {
@@ -410,8 +531,8 @@ input[type=number] {
 
     .share-icon {
         position: absolute;
-        left: 200px;
-        top: 160px;
+        left: 220px;
+        top: 197px;
     }
 
     .share-icon svg {
@@ -422,8 +543,8 @@ input[type=number] {
 
     .glass-victor svg {
         position: absolute;
-        left: 45px;
-        top: 160px;
+        right: 345px;
+        top: 527px;
         color: red;
         border: 2px solid red;
     }

@@ -1,0 +1,59 @@
+{
+    "message": "رسالة",
+    "button": {
+        "firstBtn": "اضافة الي عربة التسوق",
+        "slidBtn": "اضافة الي السلة "
+    },
+    "uppernav": {
+        "ShippingTo": "الشحن الي",
+        "placeHolder": "تسوق ضمن اكثر من 20000 منتج",
+        "loginLink": "تسجيل الدخول",
+        "enlink": "AR"
+    },
+    "secNav": {
+        "all": "الكل",
+        "hairCare": "العناية بالشعر",
+        "skinCare": "العناية بالبشرة",
+        "MenCare": "العناية بالرجل",
+        "WomenCare": "العناية بالمرأة ",
+        "BabyCare": "العناية بالطفل",
+        "AnimalPharmacy": "الصيدلية الحيوانية ",
+        "Brands": "الماركات",
+        "Offers": "العروض"
+    },
+    "langs": {
+        "Saudia": "السعودية",
+        "uae": "الامارات",
+        "egypt": "مصر"
+    },
+    "upperSec": {
+        "main": "الرئيسية",
+        "vitamin": "الفيتامينات الغذائية"
+    },
+    "infoPart": {
+        "title1": "معلومات",
+        "title2": "تفاصيل",
+        "title3": "تقييم"
+    },
+    "swiper": {
+        "sameProduct": "المنتجات المتشابهة",
+        "moreBrands": "المزيد من هده الماركات",
+        "showMore": "شاهد المزيد"
+    },
+    "footer": {
+        "readyToHelp": "نحن دائما جاهزون لمساعدتك",
+        "contactUs": "تواصل معنا",
+        "subscribe": "للاشتراك في النشرة البريدية",
+        "email": "اكتب البريد الالكتروني",
+        "ShopWithUs": " تسوق معنا",
+        "account": "حسابك",
+        "yourorder": "تتبع طلبك",
+        "paymentMethod": "طريقة الدفع",
+        "ShippingDelivery": "الشحن والتوصيل ",
+        "LearnMore": " اعرف المزيد عننا",
+        "OurBlog": "مدونتنا",
+        "privacyPolicy": "سياسة الخصوصية",
+        "Exchange": "سياسة الاستبدال والاسترجاع ",
+        "DownloadApp": "حمل التطبيق من هنا"
+    }
+}

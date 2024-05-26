@@ -8,6 +8,7 @@ export const productsModule = defineStore("productsModule", {
     state: () => ({
         flashDeals: [],
         newProducts: [],
+        cartItems: [],
     }),
     actions: {
         async getProducts() {
@@ -18,6 +19,12 @@ export const productsModule = defineStore("productsModule", {
                     this.flashDeals = res.data.products.slice(0, 8);
                 })
                 .catch((err) => console.log(err));
+        },
+        addItemToStore(item) {
+            // Mutate the state to add the item
+            // this.newProducts.push(item);
+            this.cartItems.push(item);
+            console.log(this.cartItems);
         },
     },
 }); 

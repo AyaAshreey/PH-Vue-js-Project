@@ -5,24 +5,37 @@
       <v-container>
         <v-row class="first-nav">
 
-          <v-col cols="3" class="ps-8 " style="margin-right: -37px;">
-            <div class="parent text-white d-flex justify-space-between align-center">
+          <v-col cols="3" class="ps-8 " :style="computedColStyle">
+            <div class="parent text-white d-flex justify-space-between align-center" :style="computedParentStyle">
               <!-- ////////////Logo   //////////////////-->
               <img class="nav-logo" src="@/assets/images/logo 1.png" alt="" />
 
               <!-- ///////////////// الشحن الي ////////// -->
               <div class="lang-column">
-                <div class="lang d-flex align-center text-white " style="gap: 5px; cursor: pointer" id="language-btn">
+                <div class="lang d-flex align-center text-white " style="gap: 5px; cursor: pointer;width: 110px"
+                  id="language-btn">
                   <!-- <span v-html="selectedState[0].icon"></span> -->
-                  <h4> الشحن الي {{ selectedState[0].lang }} </h4>
+                  <h4> {{ $t('uppernav.ShippingTo') }} {{ selectedState[0].lang }} </h4>
+                  <!-- <h4> {{ $t('uppernav.ShippingTo') }} {{ selectedLang ? displayLang(selectedLang) : '' }} </h4> -->
+                  <!-- <h4> {{ $t('uppernav.ShippingTo') }} {{ $t('langs.Saudia') }} {{ selectedState[0].lang }} </h4> -->
+
 
                   <v-icon>mdi-chevron-down</v-icon>
                   <v-menu activator="#language-btn">
                     <v-list v-model:selected="selectedState" mandatory>
-                      <v-list-item v-for=" lang  in  langs " :key="lang.lang" :value="lang">
-                        <v-list-item-title class="d-flex align-center" style="gap: 10px">
+
+                      <!-- <v-list-item v-for=" lang  in  langs " :key="lang.lang" :value="lang">
+                        <v-list-item-title class="d-flex " style="gap: 10px">
                           <span v-html="lang.icon"> </span> {{ lang.lang }}
+                          <v-radio v-model="selectedLang" :value="lang" color="#009966"></v-radio>
+                        </v-list-item-title> -->
+
+                      <v-list-item v-for=" lang  in  langs " :key="lang.lang" :value="lang">
+                        <v-list-item-title class="d-flex " style="gap: 10px">
+                          <span v-html="lang.icon"> </span> {{ displayLang(lang) }}
+                          <v-radio v-model="selectedLang" :value="lang" color="#009966"></v-radio>
                         </v-list-item-title>
+
                       </v-list-item>
                     </v-list>
                   </v-menu>
@@ -36,45 +49,43 @@
 
 
           <!-- ========================================================== -->
-          <v-col class="input-col-container" cols="6" style="padding-right: 50px;padding-left: 0; margin-right: 15px;">
+          <v-col class="input-col-container" cols="6" :style="inputColStyle">
             <div id="search" class="position-relative" style="width: 100%;">
 
 
-              <input type="search" name="navSearch" id="navSearch"
-                style="width: 100%; height: 60px; border-radius: 10px; outline: none"
-                placeholder="تسوق ضمن اكثر من 20000 منتج " class="py-3 px-5 bg-white" />
+              <input @click="showAlert" type="search" name="navSearch" id="navSearch"
+                style="width: 100%; height: 50px; border-radius: 10px; outline: none"
+                :placeholder="$t('uppernav.placeHolder')" class="py-3 px-5 bg-white" />
 
-              <svg data-icon="search" viewBox="0 0 512 512" width="25px" style="
-                  position: absolute;
-                  left: 0;
-                  top: 50%;
-                  transform: translateY(-50%);
-                  fill: #FFFFFF;
-                  background-color: #FFBD1F;
-                  height: 100%;
-                  width: 20%;
-                  border-top-left-radius: 10px;
-                  border-bottom-left-radius: 10px;
-                  padding: 10px;
 
-                ">
+              <svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg"
+                :style="svgStyle">
                 <path
-                  d="M495,466.2L377.2,348.4c29.2-35.6,46.8-81.2,46.8-130.9C424,103.5,331.5,11,217.5,11C103.4,11,11,103.5,11,217.5   S103.4,424,217.5,424c49.7,0,95.2-17.5,130.8-46.7L466.1,495c8,8,20.9,8,28.9,0C503,487.1,503,474.1,495,466.2z M217.5,382.9   C126.2,382.9,52,308.7,52,217.5S126.2,52,217.5,52C308.7,52,383,126.3,383,217.5S308.7,382.9,217.5,382.9z">
-                </path>
+                  d="M4.63833 14.9763C4.63833 22.6954 10.99 28.9527 18.8255 28.9527C26.661 28.9527 33.0127 22.6954 33.0127 14.9763C33.0127 7.25729 26.661 1 18.8255 1C10.99 1 4.63833 7.25729 4.63833 14.9763Z"
+                  stroke="white" stroke-width="1.5" stroke-linejoin="round" />
+                <path
+                  d="M24.3821 19.6268C25.0029 19.0167 25.4953 18.2918 25.8309 17.4936C26.1664 16.6955 26.3386 15.8399 26.3374 14.976C26.3386 14.1121 26.1664 13.2565 25.8309 12.4583C25.4953 11.6602 25.0029 10.9352 24.3821 10.3251M8.62678 25.0241L1.54571 32"
+                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
+
 
             </div>
           </v-col>
           <!-- ========================================================== -->
-          <div class="overlay">
-            <v-col cols="3" class="first-col d-flex flex-row align-center "
-              style="gap: 15px ;padding-right: 35px; padding-bottom: 35px;">
-              <div class="login-link">
-                <a href="#"> تسجيل الدخول </a>
+
+          <v-col cols="3" class="first-col d-flex flex-row align-center " :style="firstColStyle">
+            <div class="overlay d-flex flex-row align-center" style="gap: 22px; margin-top: 8px;">
+              <div @click="showAlert" class="login-link">
+                <router-link to="/"> {{ $t('uppernav.loginLink') }} </router-link>
+                <!-- <a href="#"> تسجيل الدخول </a> -->
               </div>
 
+
               <div style="cursor: pointer">
-                <svg style="width: 28px; ; fill: #FFFFFF" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                <v-badge :content="cartItemCount" overlap location="right top" color="#FFBD1F" offset-y="-32"></v-badge>
+
+                <svg @click="showAlert" style="width: 28px; ; fill: #FFFFFF" viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path class="path1"
                     d="M409.6 1024c-56.464 0-102.4-45.936-102.4-102.4s45.936-102.4 102.4-102.4S512 865.136 512 921.6 466.064 1024 409.6 1024zm0-153.6c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z">
                   </path>
@@ -87,16 +98,57 @@
                 </svg>
 
 
+                <!-- <template v-if="cartItemCount >= 1">
+                  <v-badge overlap location="right top" color="#FFBD1F" offset-y="-32">
+                    <svg @click="showAlert" style="width: 28px; fill: #FFFFFF" viewBox="0 0 1024 1024"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path class="path1"
+                        d="M409.6 1024c-56.464 0-102.4-45.936-102.4-102.4s45.936-102.4 102.4-102.4S512 865.136 512 921.6 466.064 1024 409.6 1024zm0-153.6c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z">
+                      </path>
+                      <path class="path2"
+                        d="M768 1024c-56.464 0-102.4-45.936-102.4-102.4S711.536 819.2 768 819.2s102.4 45.936 102.4 102.4S824.464 1024 768 1024zm0-153.6c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z">
+                      </path>
+                      <path class="path3"
+                        d="M898.021 228.688C885.162 213.507 865.763 204.8 844.8 204.8H217.954l-5.085-30.506C206.149 133.979 168.871 102.4 128 102.4H76.8c-14.138 0-25.6 11.462-25.6 25.6s11.462 25.6 25.6 25.6H128c15.722 0 31.781 13.603 34.366 29.112l85.566 513.395C254.65 736.421 291.929 768 332.799 768h512c14.139 0 25.6-11.461 25.6-25.6s-11.461-25.6-25.6-25.6h-512c-15.722 0-31.781-13.603-34.366-29.11l-12.63-75.784 510.206-44.366c39.69-3.451 75.907-36.938 82.458-76.234l34.366-206.194c3.448-20.677-1.952-41.243-14.813-56.424zm-35.69 48.006l-34.366 206.194c-2.699 16.186-20.043 32.221-36.39 33.645l-514.214 44.714-50.874-305.246h618.314c5.968 0 10.995 2.054 14.155 5.782 3.157 3.73 4.357 9.024 3.376 14.912z">
+                      </path>
+                    </svg>
+                  </v-badge>
+                </template>
+<template v-else>
+                  <svg @click="showAlert" style="width: 28px; fill: #FFFFFF" viewBox="0 0 1024 1024"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path class="path1"
+                      d="M409.6 1024c-56.464 0-102.4-45.936-102.4-102.4s45.936-102.4 102.4-102.4S512 865.136 512 921.6 466.064 1024 409.6 1024zm0-153.6c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z">
+                    </path>
+                    <path class="path2"
+                      d="M768 1024c-56.464 0-102.4-45.936-102.4-102.4S711.536 819.2 768 819.2s102.4 45.936 102.4 102.4S824.464 1024 768 1024zm0-153.6c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z">
+                    </path>
+                    <path class="path3"
+                      d="M898.021 228.688C885.162 213.507 865.763 204.8 844.8 204.8H217.954l-5.085-30.506C206.149 133.979 168.871 102.4 128 102.4H76.8c-14.138 0-25.6 11.462-25.6 25.6s11.462 25.6 25.6 25.6H128c15.722 0 31.781 13.603 34.366 29.112l85.566 513.395C254.65 736.421 291.929 768 332.799 768h512c14.139 0 25.6-11.461 25.6-25.6s-11.461-25.6-25.6-25.6h-512c-15.722 0-31.781-13.603-34.366-29.11l-12.63-75.784 510.206-44.366c39.69-3.451 75.907-36.938 82.458-76.234l34.366-206.194c3.448-20.677-1.952-41.243-14.813-56.424zm-35.69 48.006l-34.366 206.194c-2.699 16.186-20.043 32.221-36.39 33.645l-514.214 44.714-50.874-305.246h618.314c5.968 0 10.995 2.054 14.155 5.782 3.157 3.73 4.357 9.024 3.376 14.912z">
+                    </path>
+                  </svg>
+                </template> -->
+
+
+
+
               </div>
-              <div>
-                <a class="Lang-btn" href="#">EN</a>
+              <div class="locale-changer">
+                <select class="Lang-btn" v-model="$i18n.locale">
+                  <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{
+            locale }}
+                  </option>
+                </select>
               </div>
-
-            </v-col>
-
-          </div>
-
+              <!-- <div>
+                <a @click="toggleDirection" class="Lang-btn" href="#">EN</a>
+              </div> -->
+            </div>
+          </v-col>
           <!-- ==== -->
+
+
+
 
           <div class="alt-burger-menu" style="gap: 15px ;margin-right: 70px; padding-bottom: 35px;">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
@@ -126,7 +178,7 @@
   left: 12px;">
 
           <v-col cols="1" class="d-flex justify-end " style="gap: 35px">
-            <div class="help d-flex align-center text-white mr-7" @click="openCart" style="gap: 5px">
+            <div class="help d-flex align-center text-white " @click="openCart" :style="helpIconStyle">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
                 id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512"
                 style="fill: #FFFFFF; cursor: pointer; enable-background:new 0 0 512 512;" xml:space="preserve"
@@ -149,20 +201,37 @@
           <!-- =====Second Col Second row ======= -->
 
           <v-col cols="8">
-            <ul class="links d-flex text-white justify-space-between" style="list-style: none">
-
-              <li><a href=""> الكل </a> </li>
-              <li><a href=""> العناية بالشعر </a> </li>
-              <li><a href=""> العناية بالبشرة </a> </li>
-              <li class="extra-link"><a href=""> العناية بالرجل </a> </li>
-              <li class="extra-link"><a href=""> العناية بالمرأة </a> </li>
-              <li class="extra-link"><a href=""> العناية بالطفل </a> </li>
-              <li class="extra-link"><a href=""> الصيدلية الحيوانية </a> </li>
-              <li><a href=""> الماركات </a> </li>
-              <li class="extra-link"><a href=""> العروض </a> </li>
-
+            <ul class="links d-flex text-white justify-space-between" style="list-style: none;">
+              <li>
+                <router-link @click="showAlert" to="/"> {{ $t('secNav.all') }} </router-link>
+              </li>
+              <li>
+                <router-link @click="showAlert" to="/"> {{ $t('secNav.hairCare') }} </router-link>
+              </li>
+              <li>
+                <router-link @click="showAlert" to="/"> {{ $t('secNav.skinCare') }} </router-link>
+              </li>
+              <li class="extra-link">
+                <router-link @click="showAlert" to="/"> {{ $t('secNav.MenCare') }} </router-link>
+              </li>
+              <li class="extra-link">
+                <router-link @click="showAlert" to="/"> {{ $t('secNav.WomenCare') }} </router-link>
+              </li>
+              <li class="extra-link">
+                <router-link @click="showAlert" to="/"> {{ $t('secNav.BabyCare') }} </router-link>
+              </li>
+              <li class="extra-link">
+                <router-link @click="showAlert" to="/"> {{ $t('secNav.AnimalPharmacy') }} </router-link>
+              </li>
+              <li>
+                <router-link @click="showAlert" to="/"> {{ $t('secNav.Brands') }} </router-link>
+              </li>
+              <li class="extra-link">
+                <router-link @click="showAlert" to="/"> {{ $t('secNav.Offers') }} </router-link>
+              </li>
             </ul>
           </v-col>
+
           <!-- =====third Col Second row ======= -->
 
           <v-col cols="3"></v-col>
@@ -172,16 +241,123 @@
     </v-app-bar>
 
   </div>
+
+
+
+  <div v-if="alertVisible" class="custom-alert">
+    <div class="alert-content">
+      <p>{{ alertMessage }}</p>
+      <v-icon @click="hideAlert" class="alert-close">mdi-close</v-icon>
+    </div>
+  </div>
 </template>
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
-  inject: ["Emitter"],
+
   methods: {
+    showAlert() {
+      this.alertMessage = "Coming Soon";
+      this.alertVisible = true;
+    },
+    hideAlert() {
+      this.alertVisible = false;
+    },
     openCart() {
       this.Emitter.emit("openCart");
     },
+    // viewCart() {
+    //   // Code to view the cart
+    // },
+
+    ...mapActions(['updateDirection', 'toggleDirection']),
+    displayLang(lang) {
+      return this.$i18n.locale === "ar" ? lang.lang : lang.translation;
+    }
+
   },
+  computed: {
+    ...mapGetters(['directionValue', 'cartItemCount']),
+    direction() {
+      return this.directionValue;
+    },
+    directionClass() {
+      return this.directionValue === 'rtl' ? 'rtl-class' : 'ltr-class';
+    },
+
+
+    computedColStyle() {
+      return this.$i18n.locale === 'ar' ? 'margin-right: -37px;' : 'margin-left: 0';
+    },
+    computedParentStyle() {
+      return this.$i18n.locale === 'ar' ? 'margin-right: -28px;' : 'margin-left: -60px;';
+    },
+
+    svgStyle() {
+      return {
+        position: 'absolute',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        backgroundColor: '#FFBD1F',
+        height: '100%',
+        width: '21%',
+        // borderTopRightRadius: this.$i18n.locale === 'ar' ? '0' : '10px',
+        // borderBottomRightRadius: this.$i18n.locale === 'ar' ? '0' : '10px',
+
+
+        borderTopLeftRadius: this.$i18n.locale === 'ar' ? '10px' : '0',
+        borderTopRightRadius: this.$i18n.locale === 'ar' ? '0' : '10px',
+        borderBottomLeftRadius: this.$i18n.locale === 'ar' ? '10px' : '0',
+        borderBottomRightRadius: this.$i18n.locale === 'ar' ? '0' : '10px',
+        padding: '10px',
+        left: this.$i18n.locale === 'ar' ? '0' : 'auto',
+        // right: this.$i18n.locale === 'ar' ? '0' : 'auto'
+      };
+    },
+    inputColStyle() {
+      return {
+        'padding-right': this.$i18n.locale === 'ar' ? '50px' : '0',
+        'padding-left': this.$i18n.locale === 'ar' ? '0' : '50px',
+        'margin-right': this.$i18n.locale === 'ar' ? '15px' : '0',
+
+        // 'margin-left': this.$i18n.locale === 'ar' ? '0' : '15px'
+      };
+
+    },
+    firstColStyle() {
+      return {
+        'gap': this.$i18n.locale === 'ar' ? '15px' : '15px',
+        'padding-right': this.$i18n.locale === 'ar' ? '35px' : '50px',
+        'padding-bottom': this.$i18n.locale === 'ar' ? '50px' : '50px',
+        'padding-left': this.$i18n.locale === 'ar' ? '0' : '50px',
+
+      };
+    },
+    helpIconStyle() {
+      return {
+        gap: '5px',
+        'margin-right': this.$i18n.locale === 'ar' ? '28px' : '0',
+        'margin-left': this.$i18n.locale === 'ar' ? '0' : '28px',
+
+
+      };
+    },
+
+
+
+  },
+
+  inject: ["Emitter"],
+  created() {
+    this.selectedLang = this.langs[0];
+
+  },
+
   data: () => ({
+    alertVisible: false,
+    alertMessage: "",
+    selectedLang: "",
     selectedState: [
       {
         icon: `<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-sa" viewBox="0 0 512 512" style="enable-background: new 0 0 512 512; width: 20px">
@@ -242,6 +418,7 @@ export default {
   </g>
 </svg>`,
         lang: "السعودية",
+        translation: "Saudia"
 
       },
       {
@@ -285,6 +462,7 @@ export default {
 </svg>
 `,
         lang: "مصر",
+        translation: "Egypt"
 
       },
       {
@@ -300,13 +478,82 @@ export default {
         </g>
         </svg>`,
         lang: "الامارات",
+        translation: "The UAE"
 
       },
     ],
   }),
+
+
+
+
 };
+
+
+
 </script>
 <style scoped>
+.v-locale--is-ltr {
+  direction: unset !important;
+}
+
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.custom-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border: 3px solid #036C46;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  font-family: 'Montserrat Arabic', sans-serif;
+  width: 400px;
+  height: 170px;
+  border-radius: 15px;
+}
+
+.alert-content {
+  text-align: center;
+}
+
+.alert-content p {
+  margin-top: 10%;
+  font-size: 30px;
+  color: #036C46;
+  font-family: 'Modern Antiqua';
+}
+
+.alert-close {
+  text-align: center;
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  color: #036C46;
+  border-radius: 50%;
+  background-color: #e6dddd70;
+  padding: 15px;
+}
+
+.alert-close:hover {
+  cursor: pointer;
+}
+
 #search {
   display: flex;
   flex-direction: row-reverse;
@@ -323,7 +570,7 @@ export default {
 .first-col .Lang-btn {
   color: #FFFFFF;
   font-size: 25px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 
@@ -339,7 +586,12 @@ export default {
   display: none;
 }
 
-@media screen and (max-width: 834px) {
+
+@media (max-width: 834px) {
+  .alt-burger-menu {
+    display: none;
+  }
+
   #search {
     width: 90% !important;
     margin-right: -20px !important;
@@ -352,7 +604,7 @@ export default {
   .nav-logo {
     width: 90%;
     margin-right: 30px !important;
-    margin-top: 10px !important;
+    /* margin-top: 10px !important; */
   }
 
   .links {
@@ -385,15 +637,16 @@ export default {
   }
 
   .first-col {
-    display: block ruby !important;
+    /* display: block ruby !important; */
     padding-bottom: 35px !important;
-    position: absolute;
+    /* position: absolute; */
     margin-right: -50px !important;
     margin-top: 10px !important;
   }
 
   .first-col div {
-    margin-right: 10px !important;
+    /* margin-right: 10px !important; */
+    margin-top: -4px !important;
   }
 
   .first-col svg {
@@ -450,7 +703,7 @@ export default {
   }
 
   .nav-logo {
-    margin-right: 10px !important;
+    margin-right: 40px !important;
     width: 105px;
     margin-top: 12px;
   }
@@ -461,7 +714,6 @@ export default {
     margin-right: 20px !important;
   }
 
-  /* =========== */
   .links {
     justify-content: start !important;
     gap: 20px !important;

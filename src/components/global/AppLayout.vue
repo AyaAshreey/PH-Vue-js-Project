@@ -1,5 +1,5 @@
 <template>
-    <div class="layout">
+    <div class="layout" :dir="$i18n.locale == 'ar' ? 'rtl' : 'ltr'">
         <v-layout class="position-relative">
             <CartDrawer />
             <v-main style="padding-top: 150px">
@@ -45,7 +45,11 @@ export default {
 </script>
 <style>
 * {
-    direction: rtl !important;
+    /* direction: rtl; */
     font-family: 'Montserrat Arabic', sans-serif;
 }
+
+/* .v-locale--is-ltr {
+    direction: unset !important;
+} */
 </style>

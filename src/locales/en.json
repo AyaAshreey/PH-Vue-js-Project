@@ -1,0 +1,59 @@
+{
+    "message": "message",
+    "button": {
+        "firstBtn": "Add to cart",
+        "slidBtn": "Add to cart"
+    },
+    "uppernav": {
+        "ShippingTo": "Shipping to",
+        "placeHolder": "Shop from more than 20,000 products",
+        "loginLink": "Login",
+        "enlink": "EN"
+    },
+    "secNav": {
+        "all": "All",
+        "hairCare": "hair care",
+        "skinCare": "skin care",
+        "MenCare": "Men's care",
+        "WomenCare": "Women's care",
+        "BabyCare": "Baby care",
+        "AnimalPharmacy": "Animal pharmacy",
+        "Brands": "Brands",
+        "Offers": "Offers"
+    },
+    "langs": {
+        "Saudia": "Saudia",
+        "uae": "The UAE",
+        "egypt": "Egypt"
+    },
+    "upperSec": {
+        "main": "Main",
+        "vitamin": "Nutritional vitamins"
+    },
+    "infoPart": {
+        "title1": "Information",
+        "title2": "Details ",
+        "title3": "Evaluation"
+    },
+    "swiper": {
+        "sameProduct": "Similar Products ",
+        "moreBrands": "More of these brands",
+        "showMore": "See more"
+    },
+    "footer": {
+        "readyToHelp": "We are always ready to help you",
+        "contactUs": "Connect us",
+        "subscribe": "To subscribe to the newsletter",
+        "email": "Write your email",
+        "ShopWithUs": "Shop with us",
+        "account": "Your account",
+        "yourorder": "Track your order",
+        "paymentMethod": "payment method",
+        "ShippingDelivery": "Shipping and delivery ",
+        "LearnMore": "Learn more about us",
+        "OurBlog": "Our blog",
+        "privacyPolicy": "privacy policy",
+        "Exchange": "Exchange and return policy ",
+        "DownloadApp": "Download the application from here"
+    }
+}

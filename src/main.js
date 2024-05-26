@@ -1,7 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
-
+import store from './store/index';
+import i18n from './i18n';
 
 // Pinia config
 import { createPinia } from "pinia";
@@ -9,12 +10,12 @@ import { createPinia } from "pinia";
 import mitt from "mitt";
 const Emitter = mitt();
 
+// Import the Vuex store
+
 //swiper congig
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-
 
 
 // Vuetify
@@ -29,12 +30,13 @@ const vuetify = createVuetify({
   directives
 });
 
-
 createApp(App)
   .use(vuetify)
+  .use(store) // Register the Vuex store
   .provide("Emitter", Emitter)
   .use(createPinia())
   .use(router)
+  .use(i18n)
   .mount("#app");
 
 

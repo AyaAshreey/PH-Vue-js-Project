@@ -1,4 +1,5 @@
 <template>
+  <!-- <app-layout :dir="direction"> -->
   <app-layout>
     <router-view />
   </app-layout>
@@ -8,11 +9,16 @@
 
 <script>
 import AppLayout from "./components/global/AppLayout.vue";
+// import { mapGetters } from 'vuex';
 
 export default {
   components: {
     AppLayout,
+
   },
+  // computed: {
+  //   ...mapGetters(['direction']),
+  // }
 };
 
 </script>
@@ -31,6 +37,11 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
+// body[dir="rtl"] {
+//   direction: rtl;
+//   text-align: right;
+// }
 
 nav {
   padding: 30px;
