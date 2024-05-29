@@ -747,6 +747,10 @@ export default {
     font-size: 8px;
   }
 
+  .custom-alert {
+    width: 300px
+  }
+
 
 
 }

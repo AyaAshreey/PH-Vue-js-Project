@@ -453,22 +453,23 @@ input[type=number] {
 
     .heart-icon {
         position: absolute;
-        left: 45px;
-        top: 160px;
+        right: 5px;
+        top: 20px;
         cursor: pointer;
     }
 
     .share-icon {
         position: absolute;
-        left: 45px;
-        top: 220px;
+        right: 5px;
+        top: 70px;
+
     }
 
     .glass-victor svg {
         list-style: none;
         position: absolute;
         left: 10px;
-        top: 200px;
+        bottom: 20px;
     }
 
     .contain-thid-part {
@@ -520,8 +521,8 @@ input[type=number] {
 
     .heart-icon {
         position: absolute;
-        left: 220px;
-        top: 150px;
+        right: 5px;
+        top: 20px !important;
     }
 
     .heart-icon svg {
@@ -531,8 +532,8 @@ input[type=number] {
 
     .share-icon {
         position: absolute;
-        left: 220px;
-        top: 197px;
+        right: 5px;
+        top: 70px;
     }
 
     .share-icon svg {
@@ -543,10 +544,9 @@ input[type=number] {
 
     .glass-victor svg {
         position: absolute;
-        right: 345px;
-        top: 527px;
-        color: red;
-        border: 2px solid red;
+        left: 5px;
+        bottom: 10px;
+
     }
 
     /* ============= */
@@ -642,8 +642,8 @@ input[type=number] {
 
     .upper-box {
         position: absolute;
-        right: 5px;
-        bottom: 208px;
+        right: 5px !important;
+        bottom: 50px;
         width: 120px;
     }
 

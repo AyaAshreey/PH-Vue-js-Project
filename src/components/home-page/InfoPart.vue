@@ -351,9 +351,9 @@ ul li {
 }
 
 
-.wide-parg {
+/* .wide-parg {
     word-wrap: break-word;
-}
+} */
 
 @media (max-width: 834px) {
     .rate-section-phon-screen {
@@ -395,6 +395,14 @@ ul li {
         font-size: 11px !important;
     }
 
+    .fun-facts ul {
+        line-height: 20px !important;
+    }
+
+    .fun-facts li {
+        font-size: 10px !important;
+    }
+
     /* .contain-wide-paragraph {
         height: 200px
     } */
@@ -405,6 +413,7 @@ ul li {
         text-overflow: ellipsis;
         font-size: 10px !important;
         line-height: 16px !important;
+        height: 98px;
     }
 
     .rate-section-phon-screen {

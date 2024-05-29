@@ -225,7 +225,7 @@ export default {
     }
 
     .products-swiper {
-        margin-top: 50px !important;
+        margin-top: 90px !important;
     }
 }
 </style>
