@@ -5,6 +5,8 @@
                 {{ $t('swiper.sameProduct') }} </h3>
             <a href="#" :style="ShowMoreStyling"> {{ $t('swiper.showMore') }} </a>
         </div>
+
+
         <Swiper class="swp-class pb-9 px-5" :modules="modules" :slides-per-view="calculateSlidesPerView()"
             :space-between="26" :navigation="{ prevEl: '.swiper-button-prev', nextEl: '.swiper-button-next' }"
             :autoplay="{ delay: 2000, pauseOnMouseEnter: true, disableOnInteraction: false }" :loop="true"
@@ -84,6 +86,8 @@
                 <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
         </div>
+
+
     </div>
 
 </template>

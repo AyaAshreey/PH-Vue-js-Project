@@ -287,12 +287,12 @@ export default {
     },
 
 
-    computedColStyle() {
-      return this.$i18n.locale === 'ar' ? 'margin-right: -37px;' : 'margin-left: 0';
-    },
-    computedParentStyle() {
-      return this.$i18n.locale === 'ar' ? 'margin-right: -28px;' : 'margin-left: -60px;';
-    },
+    // computedColStyle() {
+    //   return this.$i18n.locale === 'ar' ? 'margin-right: -37px;' : 'margin-left: 0';
+    // },
+    // computedParentStyle() {
+    //   return this.$i18n.locale === 'ar' ? 'margin-right: -28px;' : 'margin-left: -60px;';
+    // },
 
     svgStyle() {
       return {
@@ -318,8 +318,8 @@ export default {
     inputColStyle() {
       return {
         'padding-right': this.$i18n.locale === 'ar' ? '50px' : '0',
-        'padding-left': this.$i18n.locale === 'ar' ? '0' : '50px',
-        'margin-right': this.$i18n.locale === 'ar' ? '15px' : '0',
+        // 'padding-left': this.$i18n.locale === 'ar' ? '0' : '50px',
+        // 'margin-right': this.$i18n.locale === 'ar' ? '15px' : '0',
 
         // 'margin-left': this.$i18n.locale === 'ar' ? '0' : '15px'
       };
@@ -586,6 +586,11 @@ export default {
   display: none;
 }
 
+@media (min-width: 1280px) {
+  .v-container {
+    max-width: none;
+  }
+}
 
 @media (max-width: 834px) {
   .alt-burger-menu {

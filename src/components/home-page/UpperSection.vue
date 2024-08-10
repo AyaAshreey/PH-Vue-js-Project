@@ -23,7 +23,6 @@
                 <!-- ============================First col================================ -->
 
                 <v-col cols="12" sm="12" md="12" lg="2" class="pl-0">
-
                     <v-row justify="center">
                         <v-col cols="12">
                             <div class="small-potiles">
@@ -48,17 +47,10 @@
                             </div>
                         </v-col>
                     </v-row>
-
-
-
-
-
                 </v-col>
 
                 <!-- ============================second col================================ -->
                 <v-col cols="12" sm="12" md="8" lg="4" class="pr-0">
-
-
                     <v-row justify="center">
                         <v-col cols="12">
                             <div class="big-bottel" style="position: relative;">
@@ -123,13 +115,9 @@
 
                         </v-col>
                     </v-row>
-
-
                 </v-col>
                 <!-- ============================third col================================ -->
                 <v-col cols="12" sm="12" md="12" lg="5" :style="detailColStyle">
-
-
                     <v-row justify="center">
                         <v-col cols="12">
                             <div class="contain-thid-part">
@@ -359,11 +347,6 @@ export default {
                 'right': this.$i18n.locale === 'ar' ? '4px' : '16px',
             };
         },
-
-
-
-
-
 
     },
 };

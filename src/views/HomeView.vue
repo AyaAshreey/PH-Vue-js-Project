@@ -14,8 +14,6 @@ import UpperSection from "@/components/home-page/UpperSection.vue";
 import InfoPart from "@/components/home-page/InfoPart.vue";
 import swiperSimilarproducts from "@/components/home-page/swiperSimilarproducts.vue";
 import MoreProducts from '@/components/home-page/MoreProducts.vue';
-
-
 import { productsModule } from "@/stores/products";
 import { mapActions, mapState } from "pinia";
 

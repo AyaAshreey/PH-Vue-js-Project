@@ -19,9 +19,6 @@ import AppFooter from "./AppFooter.vue";
 import CartDrawer from "./CartDrawer.vue";
 import FixedNavVue from './FixedNav.vue';
 // import ResponsiveNav from "./ResponsiveNav.vue";
-
-
-
 export default {
     data: () => ({
         drawer: true,

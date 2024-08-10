@@ -3,6 +3,7 @@
         <v-footer :app="true" color="#036C46" absolute>
 
             <v-container fluid class="px-0 py-0 ">
+
                 <v-row style="background-color: #F8F8F8; right: 0;left: 0;position: absolute; margin-bottom: 10px; ">
 
                     <v-col cols="12" sm="12" md="12" lg="4">
