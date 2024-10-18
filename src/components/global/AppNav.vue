@@ -30,7 +30,7 @@
                           <v-radio v-model="selectedLang" :value="lang" color="#009966"></v-radio>
                         </v-list-item-title> -->
 
-                      <v-list-item v-for=" lang  in  langs " :key="lang.lang" :value="lang">
+                      <v-list-item v-for=" lang in langs " :key="lang.lang" :value="lang">
                         <v-list-item-title class="d-flex " style="gap: 10px">
                           <span v-html="lang.icon"> </span> {{ displayLang(lang) }}
                           <v-radio v-model="selectedLang" :value="lang" color="#009966"></v-radio>
@@ -136,7 +136,7 @@
               <div class="locale-changer">
                 <select class="Lang-btn" v-model="$i18n.locale">
                   <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{
-            locale }}
+                    locale }}
                   </option>
                 </select>
               </div>
@@ -318,7 +318,7 @@ export default {
     inputColStyle() {
       return {
         'padding-right': this.$i18n.locale === 'ar' ? '50px' : '0',
-        // 'padding-left': this.$i18n.locale === 'ar' ? '0' : '50px',
+        'padding-left': this.$i18n.locale === 'ar' ? '0' : '50px',
         // 'margin-right': this.$i18n.locale === 'ar' ? '15px' : '0',
 
         // 'margin-left': this.$i18n.locale === 'ar' ? '0' : '15px'
@@ -328,7 +328,7 @@ export default {
     firstColStyle() {
       return {
         'gap': this.$i18n.locale === 'ar' ? '15px' : '15px',
-        'padding-right': this.$i18n.locale === 'ar' ? '35px' : '50px',
+        //'padding-right': this.$i18n.locale === 'ar' ? '35px' : '50px',
         'padding-bottom': this.$i18n.locale === 'ar' ? '50px' : '50px',
         'padding-left': this.$i18n.locale === 'ar' ? '0' : '50px',
 
